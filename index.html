@@ -1,0 +1,979 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Employee-manual by fmitech</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Employee-manual</h1>
+        <p>The Fluid Media Inc. Employee Manual</p>
+        <p class="view"><a href="https://github.com/fmitech/employee-manual">View the Project on GitHub <small>fmitech/employee-manual</small></a></p>
+        <ul>
+          <li><a href="https://github.com/fmitech/employee-manual/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/fmitech/employee-manual/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/fmitech/employee-manual">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="welcome-to-fluid-media" class="anchor" href="#welcome-to-fluid-media"><span class="octicon octicon-link"></span></a>Welcome to Fluid Media</h1>
+
+<p>The goal of this manual is to guide your first couple of weeks at Fluid Media. The manual is composed of several sections. The first couple of sections will help to introduce your workstations and the various tools you'll use in your everyday development, most notably source control.</p>
+
+<blockquote>
+<h4>
+<a name="note" class="anchor" href="#note"><span class="octicon octicon-link"></span></a>Note</h4>
+
+<p>This manual is available on github. If you spot any errors, omissions, or would like to contribute, please don't hesitate to create a pull-request (this manual will explain how to that shortly)</p>
+</blockquote>
+
+<h2>
+<a name="workstations" class="anchor" href="#workstations"><span class="octicon octicon-link"></span></a>Workstations</h2>
+
+<blockquote>
+<p>"This is my workstation, there are many like it but this one is mine."</p>
+</blockquote>
+
+<p>Your workstations have been setup to be development ready. We use a provisioning tool called <em>KitchenPlan</em> to automate setup and configuration of development machines. The company's KitchenPlan repo is maintained <a href="https://github.com/fmitech/kitchenplan/tree/version2">here</a>. Take a look if you're curious how the machine was setup.</p>
+
+<p>You can add/modify features/applications based on your prefrence.</p>
+
+<h3>
+<a name="installed-applicationscomponents" class="anchor" href="#installed-applicationscomponents"><span class="octicon octicon-link"></span></a>Installed applications/components</h3>
+
+<p>Along with the base operating system, the following additional software has also been installed.</p>
+
+<h4>
+<a name="sublime-text-3" class="anchor" href="#sublime-text-3"><span class="octicon octicon-link"></span></a>Sublime Text 3</h4>
+
+<p>A great text editor. <a href="http://www.sublimetext.com/3">More information.</a></p>
+
+<p>There are tons of useful plugins available for Sublime Text. The vast majority of them can be installed via <a href="https://sublime.wbond.net/">Package Control</a>. You can browse packages <a href="https://sublime.wbond.net/browse">online</a> and then use the Command Palette to install.</p>
+
+<p>[insert how-to pics here]</p>
+
+<p>Some useful plugins have already been installed.</p>
+
+<table>
+<thead><tr>
+<th>Package</th>
+<th>Description</th>
+</tr></thead>
+<tbody>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/AdvancedNewFile">AdvancedNewFile</a></td>
+<td>Allows for faster file creation within a project</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Alignment">Alignment</a></td>
+<td>Key-binding for aligning multi-line and multiple selections</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/BracketHighlighter">Bracket​Highlighter</a></td>
+<td>Matcher for a variety of brackets</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Emmet">Emmet</a></td>
+<td>Zen-Coding</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Git">Git</a></td>
+<td>Git integration</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/GitGutter">GitGutter</a></td>
+<td>Show git line status in gutter</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/SideBarEnhancements">SideBarEnhancements</a></td>
+<td>Enhances the Sidebar</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Sass">Sass</a></td>
+<td>Syntax highlighting and tab/code completion for Sass and SCSS files</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/SCSS">SCSS</a></td>
+<td>Additional syntax for SCSS files</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/ApplySyntax">ApplySyntax</a></td>
+<td>Syntax detector for a wide variety of files</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Pretty%20JSON">Pretty JSON</a></td>
+<td>Prettifies JSON documents</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Theme%20-%20Soda">Theme - Soda</a></td>
+<td>A UI Theme</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Theme%20-%20Flatland">Theme - Flatland</a></td>
+<td>A UI Theme</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Theme%20-%20Spacegray">Theme - Spacegray</a></td>
+<td>A UI Theme</td>
+</tr>
+<tr>
+<td><a href="https://sublime.wbond.net/packages/Tomorrow%20Color%20Schemes">Tomorrow Color Schemes</a></td>
+<td>Additional Color Schemes</td>
+</tr>
+</tbody>
+</table><p>In addition, the following preferences have also been set. Feel free to customize these to your liking. To modify, <em>Preferences &gt; Settings - User</em>.</p>
+
+<div class="highlight highlight-JSON"><pre><span class="p">{</span>
+    <span class="nt">"auto_complete"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"auto_complete_commit_on_tab"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"auto_complete_with_fields"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"bold_folder_labels"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"color_scheme"</span><span class="p">:</span> <span class="s2">"Packages/Tomorrow Color Schemes/Tomorrow-Night.tmTheme"</span><span class="p">,</span>
+    <span class="nt">"ensure_newline_at_eof_on_save"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"fade_fold_buttons"</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+    <span class="nt">"file_exclude_patterns"</span><span class="p">:</span>
+    <span class="p">[</span>
+        <span class="s2">".DS_Store"</span><span class="p">,</span>
+        <span class="s2">".gitkeep"</span><span class="p">,</span>
+        <span class="s2">"dump.rdb"</span>
+    <span class="p">],</span>
+    <span class="nt">"folder_exclude_patterns"</span><span class="p">:</span>
+    <span class="p">[</span>
+        <span class="s2">".svn"</span><span class="p">,</span>
+        <span class="s2">".git"</span><span class="p">,</span>
+        <span class="s2">".hg"</span><span class="p">,</span>
+        <span class="s2">"CVS"</span><span class="p">,</span>
+        <span class="s2">"tmp"</span><span class="p">,</span>
+        <span class="s2">".bundle"</span><span class="p">,</span>
+        <span class="s2">".sass-cache"</span><span class="p">,</span>
+        <span class="s2">"log"</span><span class="p">,</span>
+        <span class="s2">"cache"</span>
+    <span class="p">],</span>
+    <span class="nt">"font_face"</span><span class="p">:</span> <span class="s2">"Monaco"</span><span class="p">,</span>
+    <span class="nt">"font_size"</span><span class="p">:</span> <span class="mi">14</span><span class="p">,</span>
+    <span class="nt">"highlight_line"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"highlight_modified_tabs"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"ignored_packages"</span><span class="p">:</span>
+    <span class="p">[</span>
+        <span class="s2">"Vintage"</span>
+    <span class="p">],</span>
+    <span class="nt">"scroll_past_end"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"soda_folder_icons"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"tab_size"</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+    <span class="nt">"theme"</span><span class="p">:</span> <span class="s2">"Soda Dark 3.sublime-theme"</span><span class="p">,</span>
+    <span class="nt">"translate_tabs_to_spaces"</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+    <span class="nt">"trim_trailing_white_space_on_save"</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span>
+</pre></div>
+
+<h4>
+<a name="git-gitx" class="anchor" href="#git-gitx"><span class="octicon octicon-link"></span></a>Git, Gitx</h4>
+
+<p>We use <a href="http://git-scm.com/">Git</a> as our SCM of choice and the latest version has been installed on your workstation. In addition, <a href="http://gitx.frim.nl/">Gitx</a> has also been installed and provides a nice GUI for reviewing your changes prior to committing and viewing version history.</p>
+
+<p>[attach screenshots here]</p>
+
+<h4>
+<a name="homebrew-homebrew-cask" class="anchor" href="#homebrew-homebrew-cask"><span class="octicon octicon-link"></span></a>Homebrew, Homebrew Cask</h4>
+
+<p><a href="http://brew.sh/">Homebrew</a> is a package manager for OS X (similar to apt-get on Ubuntu or yum on Fedora). You can use it to install packages of various software (e.g. <em>mysql</em>, <em>imagemagick</em>, <em>wget</em>, etc.). <a href="http://caskroom.io/">Homebrew Cask</a> extends Homebrew and provides a CLI for installing OS X binaries.</p>
+
+<p>To use:</p>
+
+<pre lang="Shell"><code>$ brew install redis
+$ brew cask install google-drive
+</code></pre>
+
+<h4>
+<a name="rvm" class="anchor" href="#rvm"><span class="octicon octicon-link"></span></a>RVM</h4>
+
+<p><a href="http://rvm.io/">RVM</a>(Ruby Version Manager) is a tool that allows you to manage and work with multiple ruby versions and environments.</p>
+
+<p>Listing installed rubies:</p>
+
+<pre lang="Shell"><code>$ rvm list
+</code></pre>
+
+<p>Installing a version of ruby</p>
+
+<pre lang="Shell"><code>$ rvm install ruby-2.1.0
+</code></pre>
+
+<p>Using a version of ruby</p>
+
+<pre lang="Shell"><code>$ rvm use ruby-2.1.0
+</code></pre>
+
+<p>It is recommended that you read the <a href="http://rvm.io/">RVM Documentation</a>, in particular the sections about <a href="http://rvm.io/rvm/upgrading">upgrading</a>, <a href="http://rvm.io/rubies/installing">installing rubies</a>, <a href="http://rvm.io/rubies/default">setting a default ruby</a>, <a href="http://rvm.io/gemsets">gemsets</a>, and <a href="http://rvm.io/rvm/best-practices">best practices</a>.</p>
+
+<h4>
+<a name="other" class="anchor" href="#other"><span class="octicon octicon-link"></span></a>Other</h4>
+
+<table>
+<thead><tr>
+<th>Type</th>
+<th>Installed</th>
+<th>Notes</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>Browsers</td>
+<td>Google Chrome, Firefox, Safari</td>
+<td></td>
+</tr>
+<tr>
+<td>Databases</td>
+<td>MySQL, Postgres, SQLite, Redis</td>
+<td>MySQL password: <code>password</code>
+</td>
+</tr>
+<tr>
+<td>Virtualization</td>
+<td>VMWare Fusion, VirtualBox, Vagrant</td>
+<td></td>
+</tr>
+</tbody>
+</table><h2>
+<a name="accounts" class="anchor" href="#accounts"><span class="octicon octicon-link"></span></a>Accounts</h2>
+
+<p>There are several accounts you'll need to have setup and configured in your first couple of days. Some of these accounts, like email, will be provided for you; other's you'll need to setup yourself. This section provides an overview and brief explanation of the accounts you'll need.</p>
+
+<h3>
+<a name="email-provided" class="anchor" href="#email-provided"><span class="octicon octicon-link"></span></a>Email (provided)</h3>
+
+<p>Self-explanitory. Once you have your email address and password, you can login to see your email at <a href="http://mail.fluidmedia.ca">http://mail.fluidmedia.ca</a>. We use Google Apps for Business so if you use Gmail as your personal email service, this should feel right at home.</p>
+
+<h3>
+<a name="basecamp-provided" class="anchor" href="#basecamp-provided"><span class="octicon octicon-link"></span></a>Basecamp (provided)</h3>
+
+<p><a href="https://basecamp.com/">Basecamp</a> is a project management tool and probably the most popular Ruby on Rails application running in production. We use Basecamp to manage projects, to correspond with clients, and to correspond with other team members. Once you have your login and password, you can login at <a href="https://launchpad.37signals.com/basecamp">https://launchpad.37signals.com/basecamp</a>.</p>
+
+<h3>
+<a name="messagesapp-provided" class="anchor" href="#messagesapp-provided"><span class="octicon octicon-link"></span></a>Messages.app (provided)</h3>
+
+<p>Throughout the day, we use the Messages app to communicate with other team members in and out of the office. The Messages app is already installed on your machine but you'll need to setup your account with the credentials provided.</p>
+
+<p>Open the Messages application, then select <em>Preferences</em> (you can use <code>cmd + ,</code> as a shortcut). In the <em>Preferences</em> dialog, click on <em>Accounts</em> then click the <em>+</em> icon to add your account. Select <em>Other messages account...</em> and hit <em>Continue</em>. For <em>Account Type</em> select <em>Jabber</em>, for <em>Account Name</em> and <em>Password</em> enter the login information you've been provided. Set the <em>Server</em> to <code>optimus2.fluidmedia.com</code>, the <em>Port</em> to <code>5223</code> and make sure <em>Use SSL</em> is selected. Finally, click on <em>Create</em>.</p>
+
+<p>This will log you onto the chat server and you should see everyone in the organization.</p>
+
+<h4>
+<a name="chat-rooms" class="anchor" href="#chat-rooms"><span class="octicon octicon-link"></span></a>Chat Rooms</h4>
+
+<p>Along with communicating with other team members directly, we also have chatroom setup for general discussions. To join, hit <code>cmd + r</code> on your keyboard. In the dialog, enter <code>devchat</code> for <em>Room Name</em> and hit <em>Go</em>.</p>
+
+<h3>
+<a name="github" class="anchor" href="#github"><span class="octicon octicon-link"></span></a>Github</h3>
+
+<p>Github is a hosted Git (discussed later) service provider and where we keep the majority of our code. You'll need a Github account if you don't already have one. When signing up, we recommend that you use your personal email. This way you can keep your account if you ever leave Fluid Media. Go to <a href="https://github.com">https://github.com</a> to sign up or sign in. Once your account is created, we'll add you to the necessary organizations and repos.</p>
+
+<h3>
+<a name="bitbucket" class="anchor" href="#bitbucket"><span class="octicon octicon-link"></span></a>Bitbucket</h3>
+
+<p>Bitbucket is another hosted source control service provider that offers both Git and Hg support (both of these will be discussed later). The bulk of our .NET projects is hosted on Bitbucket. The signup for Bitbucket is a little easier as it allows you to login via your Google or Github account. You can also create an account if you prefer by visiting <a href="https://bitbucket.org">https://bitbucket.org</a>. Once your account is created, we'll add you to the necessary organizations and repos.</p>
+
+<h3>
+<a name="beanstalk-provided" class="anchor" href="#beanstalk-provided"><span class="octicon octicon-link"></span></a>Beanstalk (provided)</h3>
+
+<p>Beanstalk is yet another hosted source control service provider although it only houses our older projects. Access is by invitation only so you'll receive an email with instructions on how to setup your account.</p>
+
+<h3>
+<a name="trello" class="anchor" href="#trello"><span class="octicon octicon-link"></span></a>Trello</h3>
+
+<p>Trello is an organization tool that provides virtual <a href="http://en.wikipedia.org/wiki/Kanban_board">Kanban</a> boards. We use Trello to manage tasks for a particular project/sprint. The easiest way to get started with Trello is to signup via your Google (personal) account at <a href="https://trello.com/signup">https://trello.com/signup</a>. Once your account is created, we'll add you to the necessary organizations.</p>
+
+<h2>
+<a name="git" class="anchor" href="#git"><span class="octicon octicon-link"></span></a>Git</h2>
+
+<p>This section will outline the fundamentals of using Git, including 1) configuration 2) basic usage 3) project workflow.</p>
+
+<h3>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h3>
+
+<p>Before you can begin using Git, you'll need to configure some basic properties, mainly your username and your email. These will be used to identify your commits. In addition, you'll also configure an authentication mechanism.</p>
+
+<p>To configure these settings, you'll need to open up your terminal.</p>
+
+<h4>
+<a name="username" class="anchor" href="#username"><span class="octicon octicon-link"></span></a>Username</h4>
+
+<p>First you need to tell git your name, so that it can properly label the commits you make.</p>
+
+<pre lang="Shell"><code>$ git config --global user.name "Your Name Here"
+# Sets the default name for git to use when you commit
+</code></pre>
+
+<h4>
+<a name="email" class="anchor" href="#email"><span class="octicon octicon-link"></span></a>Email</h4>
+
+<p>Git saves your email address into the commits you make. Sites like Github use this information to associate your commits with your Github account. Your email address should be the same one associated with your Github/Bitbucket account.</p>
+
+<pre lang="Shell"><code>$ git config --global user.email "your_email@example.com"
+# Sets the default email for git to use when you commit
+</code></pre>
+
+<h4>
+<a name="https-authentication" class="anchor" href="#https-authentication"><span class="octicon octicon-link"></span></a>HTTPS Authentication</h4>
+
+<p>Git supports both HTTPS and SSH. Which you use is up to you although Github/Bitbucket recommend HTTPS. This section describes working with HTTPS repos, please see the <a href="#ssh-authentication">SSH Authentication</a> section on working with SSH repos.</p>
+
+<p>When you clone a HTTPS repo, you'll be asked to provide your username and password. If you don't want to keep typing your username and password everytime you talk with the remote server, you'll need to configure your <em>credential.helper</em>.</p>
+
+<p>This should already be configured on your system as Git was installed via Homebrew. As a sanity check, verify that your credential.helper is properly set</p>
+
+<pre lang="Shell"><code>$ git config --global credential.helper
+osxkeychain
+</code></pre>
+
+<blockquote>
+<p>On Linux this is slightly different. The credential.helper will store your credentials in memory for a certain time (default is 15 minutes). You can change this timeout if you like</p>
+
+<pre lang="Shell"><code>$ git config --global credential.helper 'cache --timeout=3600'
+# Set the cache to timeout after 1 hour (setting is in seconds)
+</code></pre>
+</blockquote>
+
+<h4>
+<a name="ssh-authentication" class="anchor" href="#ssh-authentication"><span class="octicon octicon-link"></span></a>SSH Authentication</h4>
+
+<p>When you clone a repo using SSH, your SSH keys are used for authentication. The following describes how to generate an SSH key pair and add it to Github and Bitbucket.</p>
+
+<h5>
+<a name="generating-ssh-keys" class="anchor" href="#generating-ssh-keys"><span class="octicon octicon-link"></span></a>Generating SSH Keys</h5>
+
+<p>To generate a new SSH key, copy and paste the text below, making sure to substitute in your email. The default settings are preferred, so when you're asked to "enter a file in which to save the key,"" just press enter to continue.</p>
+
+<pre lang="Shell"><code>$ ssh-keygen -t rsa -C "your_email@example.com"
+# Creates a new ssh key, using the provided email as a label
+# Generating public/private rsa key pair.
+# Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
+</code></pre>
+
+<p>Next, you'll be asked to enter a passphrase. Please don't leave these blank, enter an actuall passphrase.</p>
+
+<pre lang="Shell"><code>Enter passphrase (empty for no passphrase): [Type a passphrase]
+# Enter same passphrase again: [Type passphrase again]
+</code></pre>
+
+<p>Which should give you something like this:</p>
+
+<pre lang="Shell"><code>Your identification has been saved in /Users/you/.ssh/id_rsa.
+# Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
+# The key fingerprint is:
+# 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
+</code></pre>
+
+<p>To prevent entering your passphrase over and over again, add your new key to the ssh-agent.</p>
+
+<pre lang="Shell"><code>$ ssh-add id_rsa
+</code></pre>
+
+<h5>
+<a name="adding-your-ssh-key-to-github-and-bitbucket" class="anchor" href="#adding-your-ssh-key-to-github-and-bitbucket"><span class="octicon octicon-link"></span></a>Adding your SSH key to Github and Bitbucket</h5>
+
+<p>The <a href="https://help.github.com/articles/generating-ssh-keys#step-3-add-your-ssh-key-to-github">following guide</a> provides clear instructions how to add your SSH key to Github. Similarly, <a href="https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678#SetupSSHforGitandMercurialonMacOSX/Linux-Step6.InstallthepublickeyonyourBitbucketaccount">this guide</a> has instructions on adding your SSH key to Bitbucket.</p>
+
+<p>That's all there is to it. You are now ready to clone both HTTPS and SSH repos on both Github and Bitbucket.</p>
+
+<h3>
+<a name="basic-usage" class="anchor" href="#basic-usage"><span class="octicon octicon-link"></span></a>Basic Usage</h3>
+
+<p>This section describes the basics of using Git. You'll learn how to initialize an empty Git reposity, track files, create and undo commits, branch and merge, work with remotes, and git specific concepts like rebasing. Let's get started.</p>
+
+<h4>
+<a name="initializing-a-git-repository" class="anchor" href="#initializing-a-git-repository"><span class="octicon octicon-link"></span></a>Initializing a Git repository</h4>
+
+<p>Start by creating a new folder anywhere on you filesystem. In these examples we're using the Destkop.</p>
+
+<pre lang="Shell"><code>$ cd ~/Desktop
+$ mkdir my-awesome-project &amp;&amp; cd my-awesome-project
+</code></pre>
+
+<p>Within the newly created folder, create a <code>README.txt</code> file (afterall, all awesome projects contain a README). Using an editor, add some content to the README file.</p>
+
+<pre lang="Shell"><code>$ touch README.txt
+$ echo "This is my awesome project." &gt;&gt; README.txt
+</code></pre>
+
+<p>Great, our project is underway and while we don't have much, it's never to early to start tracking your changes with Git. Start by initializing a Git repository within our project folder.</p>
+
+<pre lang="Shell"><code>$ git init
+Initialized empty Git repository in /Users/tdurden/Desktop/my-awesome-project/.git/
+</code></pre>
+
+<p>With Git initialized, we can now use the <code>git</code> command within this directory to perform various operations. Let's start by checking the status.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+#
+# Initial commit
+#
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#   README.txt
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+
+<p>The <code>git status</code> command provides information about the current state of our repository. It tells us that we're on the <code>master</code> branch (more on this later) and it tells us that we have some untracked files (the README.txt file that we created in the previous step).</p>
+
+<h4>
+<a name="adding-files-to-repository" class="anchor" href="#adding-files-to-repository"><span class="octicon octicon-link"></span></a>Adding files to repository</h4>
+
+<p>When you create new files within a Git repository, they are untracked by default. You need to tell Git to track the files you want. As you may have guessed from the output of <code>git status</code>, tracking of files is done via the <code>git add</code> command. Let's track the README.txt file we created earlier and check the output of <code>git status</code> again.</p>
+
+<pre lang="Shell"><code>$ git add README.txt
+$ git status
+# On branch master
+#
+# Initial commit
+#
+# Changes to be committed:
+#   (use "git rm --cached &lt;file&gt;..." to unstage)
+#
+#   new file:   README.txt
+#
+</code></pre>
+
+<p>Git is now tracking our README.txt file. From the output of <code>git status</code>, we can see that Git recognizes our README.txt as a new file.</p>
+
+<blockquote>
+<p>If we had multiple files to add, it would be tedious to call <code>git add</code> on every file. In these situations, you can use <code>git add .</code> to add all untracked files.</p>
+</blockquote>
+
+<h4>
+<a name="committing-state" class="anchor" href="#committing-state"><span class="octicon octicon-link"></span></a>Committing state</h4>
+
+<p>We're satisfied with the current state of our project so let's go ahead and commit our changes. You can think of commits as <em>snapshots</em> of your project during a point in time.</p>
+
+<pre lang="Shell"><code>$ git commit -m "Initial Commit"
+[master (root-commit) 4634299] Initial Commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 README.txt
+</code></pre>
+
+<p>Great, our project state is now saved. We can once again perform a <code>git status</code> to ensure we didn't miss anything.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<p>The output is fairly self-explanitory. We have nothing to commit (we just committed our changes) and our working directory is clean (we don't have any conflicts or untracked files).</p>
+
+<h4>
+<a name="modifying-files" class="anchor" href="#modifying-files"><span class="octicon octicon-link"></span></a>Modifying files</h4>
+
+<p>Let's make some more changes to our <code>README.txt</code> file. Awesome projects always include license info so let's add that next. Open <code>README.txt</code> in your favourite editor and change its contents as follows:</p>
+
+<div class="highlight highlight-Text"><pre>This is my awesome open source project.
+
+Released under the MIT License.
+</pre></div>
+
+<p>Save the file. Let's perform a <code>git status</code> to see where we're at.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+# Changes not staged for commit:
+#   (use "git add &lt;file&gt;..." to update what will be committed)
+#   (use "git checkout -- &lt;file&gt;..." to discard changes in working directory)
+#
+#   modified:   README.txt
+</code></pre>
+
+<p>Because git is already tracking <code>README.txt</code>, the output now shows that it has been modified. Let's save the state by first staging the file and then committing.</p>
+
+<pre lang="Shell"><code>$ git add README.txt
+$ git commit -m "Updated README with license information"
+[master 6d443f3] Updated README with license information
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+</code></pre>
+
+<blockquote>
+<p>The above might be confusing at first. Why are we calling <code>git add</code> again? Why is saving state a 2-step process? To answer this, we need to introduce the concept of a <strong>staging area</strong>. Most version control systems use 2 places to store data, your working copy (the files and folders you're currently using) and the datastore (where the version control software decides how to pack and store your changes). In Git, there is a 3rd place called the <em>staging area</em> or <em>index</em>. Using the staging area decouples the changes made to the working copy and what gets saved in Git by allowing the developer to build up their commits however they want.</p>
+
+<p>To give a practical example, suppose you went on a caffeine-fueled hacking frenzy and implemented several features and fixed numerous bugs without saving state in-between. Without a staging area, you'd most likely be forced to create a giant commit that encompasses all these features and bug fixes - not ideal as it makes reverting difficult. Having a staging area allows you to 'cherry-pick' and 'stage' the changes you want (even from a single file) before packaging it up in a commit. This allows you to create small succinct commits.</p>
+</blockquote>
+
+<h4>
+<a name="ignoring-files" class="anchor" href="#ignoring-files"><span class="octicon octicon-link"></span></a>Ignoring files</h4>
+
+<p>Next, we'll want to create a small text file to keep track of any minor <em>todos</em> we need to perform as we're developing a specific feature. Go ahead and create the file.</p>
+
+<pre lang="Shell"><code>$ touch todos.txt
+</code></pre>
+
+<p>Let's do a <code>git status</code> to see where we're at</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#   todos.txt
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+
+<p>Now if you think about it, this file doesn't really belong in source control. After all, the file will be specific to the developer using it and won't benefit from being versioned. Let's ask Git to ignore this file.</p>
+
+<p>Ignoring files in Git is super easy and accomplished by adding a special <code>.gitignore</code> file (the <code>.</code> at the beginning is important) to the root of the repository. The contents of this file list the files to ignore.</p>
+
+<p>Let's start by creating the <code>.gitignore</code> file</p>
+
+<pre lang="Shell"><code>$ touch .gitignore
+</code></pre>
+
+<p>Open this newly created file inside your favourite editor, add the following line and save the changes.</p>
+
+<div class="highlight highlight-Text"><pre>todos.txt
+</pre></div>
+
+<p>Let's do a <code>git status</code> to see if that worked.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#   .gitignore
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+
+<p>Hey great! <code>todos.txt</code> is no longer being listed and is being ignored by Git. As for the <code>.gitignore</code> file, that should be added to source control.</p>
+
+<pre lang="Shell"><code>$ git add .gitignore
+$ git commit -m "Adds .gitignore to project"
+[master 3083bd3] Adds .gitignore to project
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+
+$ git status
+# On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<blockquote>
+<p>The <code>.gitignore</code> file isn't only limited to matching files. You can ignore entire folders and specify glob patterns for ignoring certain types of files (e.g. <code>*.log</code>)</p>
+
+<p>When working with frameworks like Ruby on Rails or .NET, you can find sample <code>.gitignore</code> files online that list commonly ignored components.</p>
+</blockquote>
+
+<h4>
+<a name="undoing-commits" class="anchor" href="#undoing-commits"><span class="octicon octicon-link"></span></a>Undoing commits</h4>
+
+<p>If you would like to revert a commit, Git provides several options that vary in how they modify the working copy. Each option is useful depending on your scenario. To illustrate the options, let's create a new file called <code>test.txt</code> and add some content.</p>
+
+<pre lang="Shell"><code>$ touch test.txt
+$ echo "This is only a test" &gt;&gt; text.txt
+</code></pre>
+
+<p>Next we'll add and commit this new file like we did previously with our README</p>
+
+<pre lang="Shell"><code>$ git add test.txt
+$ git commit -m "Adds text.txt for testing"
+[master 01d4b04] Adds text.txt for testing
+ 1 file changed, 1 insertion(+)
+ create mode 100644 test.txt
+</code></pre>
+
+<h5>
+<a name="normal-revert" class="anchor" href="#normal-revert"><span class="octicon octicon-link"></span></a>Normal revert</h5>
+
+<p>If we forgot to add something to the commit or forgot to include a modification, we can use the <code>git reset</code> command to do a normal revert.</p>
+
+<pre lang="Shell"><code>$ git reset HEAD~1
+$ git status
+# On branch master
+# Untracked files:
+#   (use "git add &lt;file&gt;..." to include in what will be committed)
+#
+#   test.txt
+nothing added to commit but untracked files present (use "git add" to track)
+</code></pre>
+
+<p>As we can see, a normal revert will return the working copy to the state it was prior to staging and committing.</p>
+
+<p>Add and commit the file again before continueing.</p>
+
+<h5>
+<a name="soft-revert" class="anchor" href="#soft-revert"><span class="octicon octicon-link"></span></a>Soft revert</h5>
+
+<p>If we made a spelling mistake in our commit message or want to modify it slightly while leaving all committed changes in the staging area, we can use <code>git reset</code> with the <code>--soft</code> option.</p>
+
+<pre lang="Shell"><code>$ git reset --soft HEAD~1
+$ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD &lt;file&gt;..." to unstage)
+#
+#   new file:   test.txt
+#
+</code></pre>
+
+<p>As we can see, a soft revert will leave the reverted changes in the staging area. This is especially useful if all you're doing is modifying the commit message.</p>
+
+<p>Before we continue, let's unstage and remove the <code>test.txt</code> file as we'll no longer need it.</p>
+
+<pre lang="Shell"><code>$ git reset HEAD test.txt
+$ rm test.txt
+</code></pre>
+
+<h5>
+<a name="hard-revert" class="anchor" href="#hard-revert"><span class="octicon octicon-link"></span></a>Hard revert</h5>
+
+<p>If we completely messed up a previous commit and want to return our working copy to a prestine state, we can use the <code>git reset</code> with the <code>--hard</code> option.</p>
+
+<p>To illustrate this, modify the README file</p>
+
+<div class="highlight highlight-Text"><pre>This is my awesome open source project.
+
+Released under the MIT License.
+
+THIS CHANGE WILL ULTIMATELY BE EREASED
+</pre></div>
+
+<p>Commit the changes</p>
+
+<pre lang="Shell"><code>$ git add README.txt
+$ git commit -m "Modifies README"
+[master bb55d36] Modifies README
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+</code></pre>
+
+<p>Now, revert the changes</p>
+
+<pre lang="Shell"><code>$ git reset --hard HEAD~1
+HEAD is now at 3083bd3 Adds .gitignore to project
+$ git status
+# On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<p>As you can see, using the <code>--hard</code> option will not only revert the commit, but will also discard any changes made in that commit from the working copy, essentialy restoring it to the state of a previous commit.</p>
+
+<blockquote>
+<p>In the examples above, all <code>git reset</code> commands were called with <code>HEAD~1</code>. The number following the <code>~</code> (tilde) indicates the number of commits to undo.</p>
+</blockquote>
+
+<h4>
+<a name="branching-and-merging" class="anchor" href="#branching-and-merging"><span class="octicon octicon-link"></span></a>Branching and Merging</h4>
+
+<p>Gits real power lies in branching and merging. Branching allows you to diverge your code from the main line of development and continue to do work without messing with the main line. Similarly, merging allows to merge a divergent branch back into the main line of development.</p>
+
+<blockquote>
+<h5>
+<a name="why-bother" class="anchor" href="#why-bother"><span class="octicon octicon-link"></span></a>Why bother?</h5>
+
+<p>Why not just modify and commit to the main line of development? While this process works fine for small projects with only one or two developers, it quickly breaks down as project complexity increases or more people are added to the project. </p>
+
+<p>Here's a practical example. Let's assume that we have a web application that is already running in production and is being contributed to by several developers. One of these developers has been asked to implement an experimental feature that may or may not ship in a future version of the application. The commits for this experimental feature are all in the main line of development. Now let's assume that a critical bug has been discovered in production and another developer needs to quickly add a patch to fix the bug. Since all commits for this project are on the main line (including commits from an un-tested and partially implemented experimental feature) the developers now have a major problem. It will be difficult to commit the patch and deploy the fix without also exposing un-tested code to production.</p>
+
+<p>This is where branching comes in. The developer working on the experimental feature could have created a seperate branch to house all their commits, leaving the main line of development unaffected. When the critical bug is discovered, the other developer can quickly patch the main line of development without also introducing unwanted commits to production. Once the experimental feature is complete and tested, the feature can be merged back into the main line for inclusion in a future release.</p>
+</blockquote>
+
+<p>We'll see later how we can use Git's awesome branching and merging functionality to develop an ideal worflow for most projects. For now, let's just concentrate on the basics.</p>
+
+<p>We've already seen one example of a branch. Recall the output of <code>git status</code> within our project directory.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<p>As you can see, all git repositories start with a main branch called the <em>master</em> branch. Typically this branch will be the main line of development with branches diverging from and merging to this branch.</p>
+
+<h5>
+<a name="branching" class="anchor" href="#branching"><span class="octicon octicon-link"></span></a>Branching</h5>
+
+<p>Let's introduce two new git commands. The first, <code>git branch</code> will list all branches in the repository. The second <code>git checkout</code> will allow to switch between branches as well as create new branches.</p>
+
+<pre lang="Shell"><code>$ git branch
+* [1] master
+</code></pre>
+
+<p>Right now we only have one branch, <code>master</code>. Let's create a new branch to isolate a new feature we want to work on. To create a new branch, use the <code>git checkout</code> command with the <code>-b</code> option followed by the name of the branch you would like created</p>
+
+<pre lang="Shell"><code>$ git checkout -b awesome-new-feature
+Switched to a new branch 'awesome-new-feature'
+</code></pre>
+
+<p>The above creates a new branch called <code>awesome-new-feature</code> and git has automatically switched to this new branch. Let's take a look at the output of <code>git branch</code></p>
+
+<pre lang="Shell"><code>$ git branch
+* [1] awesome-new-feature
+  [2] master
+</code></pre>
+
+<p>As expected, we now have two branches. The asterisk (*) indicates the currently selected branch.</p>
+
+<p>Let's once again modify the <code>README.txt</code> file with some information about our new feature. Open the file within your text editor and modify it to include the following</p>
+
+<div class="highlight highlight-Text"><pre>This is my awesome open source project.
+
+Features
+========
+- awesome new feature
+
+Released under the MIT License.
+</pre></div>
+
+<p>As we've done previously, let's commit this changeset.</p>
+
+<pre lang="Shell"><code>$ git add README.txt 
+$ git commit -m "Adds documentation about awesome new feature"
+[awesome-new-feature 45c63f5] Adds documentation about awesome new feature
+ 1 file changed, 4 insertions(+)
+</code></pre>
+
+<p>The output of the commit command will show you the branch along with the commit number (in our case, we've just commited to the <code>awesome-new-feature</code> branch and our commit number is <code>45c63f5</code>)</p>
+
+<blockquote>
+<p>Unlike centralized version control systems which use revision numbers, Git uses hashes to uniquely identify commits.</p>
+</blockquote>
+
+<p>Let's confirm that the changes we just made did not in fact affect the master branch. We can use the <code>git log</code> command to view recent commits.</p>
+
+<pre lang="Shell"><code>$ git log --graph --decorate --oneline 
+* 45c63f5 (HEAD, awesome-new-feature) Adds documentation about awesome new feature
+* 3083bd3 (master) Adds .gitignore to project
+* 6d443f3 Updated README with license information
+* 4634299 Initial Commit
+</code></pre>
+
+<p>The <code>git log</code> command shows the commit hash, branch information, and commit messages of recent commits. As we can see, our last commit was made to the <code>awesome-new-feature</code> branch. Let's switch back to the master branch and see the output of <code>git log</code>. We can switch between branches using the <code>git checkout</code> command.</p>
+
+<pre lang="Shell"><code>$ git checkout master
+Switched to branch 'master'
+
+$ git log --graph --decorate --oneline
+* 3083bd3 (HEAD, master) Adds .gitignore to project
+* 6d443f3 Updated README with license information
+* 4634299 Initial Commit
+</code></pre>
+
+<p>As you can see, the changes we made in the <code>awesome-new-feature</code> branch did not affect the master branch. If you open the <code>README.txt</code> file in your editor, you'll notice that the changes we added are not there.</p>
+
+<h5>
+<a name="merging" class="anchor" href="#merging"><span class="octicon octicon-link"></span></a>Merging</h5>
+
+<p>We're satisfied with our awesome new feature and we now want to merge the commits in our <code>awesome-new-feature</code> branch back into the <code>master</code> branch. This is done via the <code>git merge</code> command.</p>
+
+<pre lang="Shell"><code>$ git merge awesome-new-feature
+Updating 3083bd3..45c63f5
+Fast-forward
+ README.txt | 4 ++++
+ 1 file changed, 4 insertions(+)
+</code></pre>
+
+<p>Don't worry about the output of the merge command just yet, we'll explain the concepts of <em>fast-forward</em> and <em>rebase</em> later in this guide. For now, let's focus on the state of our working copy. Take another look at the output of the <code>git log</code> command.</p>
+
+<pre lang="Shell"><code>$ git log --graph --decorate --oneline
+* 45c63f5 (HEAD, master, awesome-new-feature) Adds documentation about awesome new feature
+* 3083bd3 Adds .gitignore to project
+* 6d443f3 Updated README with license information
+* 4634299 Initial Commit
+</code></pre>
+
+<p>The output shows that our working copy (<code>HEAD</code>), the master branch, and the awesome-new-feature branch are all pointing to the same last commit, meaning our changes have been successfully merged back into our master branch. If you inspect the <code>README.txt</code> file now, you'll notice that it's been updated with the modificatios we made in the <code>awesome-new-feature</code> branch.</p>
+
+<p>Since we're done with the <code>awesome-new-feature</code> branch, let's go ahead and delete it. This is accomplished with the <code>git branch</code> command and the <code>-d</code> option.</p>
+
+<pre lang="Shell"><code>$ git branch -d awesome-new-feature
+Deleted branch awesome-new-feature (was 45c63f5).
+</code></pre>
+
+<h4>
+<a name="working-with-remotes" class="anchor" href="#working-with-remotes"><span class="octicon octicon-link"></span></a>Working with Remotes</h4>
+
+<p>The Git repository that we've setup and have been using to date is only local to our machine. While this is one of the benefits of a distributed version control system, at some point you'll want to share your code and collaborate with other developers. To do this, we'll need to setup a remote. A remote is basically a git repo running on a git server somewhere and accessible to all developers on the project. This Git server can be self-hosted or provided via a git-hosting service like Github or Bitbucket. We'll use Github for this guide.</p>
+
+<h5>
+<a name="creating-the-remote-repo" class="anchor" href="#creating-the-remote-repo"><span class="octicon octicon-link"></span></a>Creating the remote repo</h5>
+
+<p>Login to Github and create a new repository. Name the repository as <code>my-awesome-project</code>, add a short description, make the repository <em>Public</em> and make sure that the option <em>Initialize this repository with a README</em> is unchecked. Click the <em>Create repository</em> button.</p>
+
+<p>The repo has been created and now Github provides us with some helpful hints on how to proceed. We'll want to follow the steps outlined in the second option as we've already created a Git repository in previous steps. We'll start by first adding a remote using the <code>git remote add</code> command</p>
+
+<pre lang="Shell"><code>$ git remote add origin git@github.com:your-username/my-awesome-project.git
+</code></pre>
+
+<p>Next, we'll want to synchronize our local repository with the remote repository by <em>pushing</em> our local changes to the remote. This is accomplished with the <code>git push</code> command</p>
+
+<pre lang="Shell"><code>$ git push -u origin master
+Counting objects: 12, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (8/8), done.
+Writing objects: 100% (12/12), 1.15 KiB | 0 bytes/s, done.
+Total 12 (delta 0), reused 0 (delta 0)
+To git@github.com:bjedrocha/my-awesome-project.git
+ * [new branch]      master -&gt; master
+Branch master set up to track remote branch master from origin.
+</code></pre>
+
+<p>If you now refresh the Github project page, you'll notice that our files and changes have been synchronized with the remote. We can now invite other collaborators to contribute to our project.</p>
+
+<blockquote>
+<p>In the above example, we called <code>git push</code> with the <code>-u</code> option. This tells Git to associate the remote branch <code>master</code> with our local branch <code>master</code>. We'll see shortly how this information is used.</p>
+</blockquote>
+
+<h5>
+<a name="synchronization" class="anchor" href="#synchronization"><span class="octicon octicon-link"></span></a>Synchronization</h5>
+
+<p>Open the <code>README.txt</code> file in your editor and make some change (whatever you want). Next, we'll commit this change as we've done previously.</p>
+
+<pre lang="Shell"><code>$ git add README.txt
+$ git commit -m "Minor change to README.txt"
+[master 025c6a6] Minor change to README.txt
+ 1 file changed, 1 insertion(+)
+</code></pre>
+
+<p>Go back to the repo's Github page and click the <em>commits</em> link to view the commits to this project. What gives? Our last commit isn't listed. Let's go back into the terminal and run <code>git status</code>.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+# Your branch is ahead of 'origin/master' by 1 commit.
+#   (use "git push" to publish your local commits)
+#
+nothing to commit, working directory clean
+</code></pre>
+
+<p>In the previous step when we first pushed our changes to the remote with the <code>git push</code> command, we added the <code>-u</code> option to have our local <code>master</code> branch track the remote <code>master</code> branch. Now we can see that Git is using this information to tell is that our local <code>master</code> branch is ahead of the remote <code>master</code> branch (<code>origin/master</code>) by 1 commit. In order to publish our changes and synchronize our local branch with the remote, we'll need to use <code>git push</code> to push up the changes.</p>
+
+<pre lang="Shell"><code>$ git push
+Counting objects: 5, done.
+Delta compression using up to 8 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 324 bytes | 0 bytes/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To git@github.com:bjedrocha/my-awesome-project.git
+   45c63f5..025c6a6  master -&gt; master
+</code></pre>
+
+<p>Let's quickly run <code>git status</code> again to see where we're at.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+nothing to commit, working directory clean
+</code></pre>
+
+<p>Excellent, Git no longer says that we're ahead of <code>origin/master</code> by 1 commit. Indeed, if you go back to the commits page on Github and refresh, you'll now see our last commit.</p>
+
+<p>In the same way that we must <em>push</em> our changes to see them reflected on the remote repository, we'll also need to <em>pull</em> down changes added by other developers. For the purposes of this guide, let's simulate another developer's changes by using Github's inline editor to make changes to our <code>README.txt</code> file. Go back to the project's Github page and click on the <code>README.txt</code> file in the file listing. Click on the <em>Edit</em> button and make a change (whatever you want) to the file. Commit the changes.</p>
+
+<p>If you view the commit history on the Github page, you'll notice our last commit is listed. Let's go back to the terminal and for illustrative purposes, run the following command</p>
+
+<pre lang="Shell"><code>$ git remote update
+</code></pre>
+
+<p>Don't worry about the command for now, we're just using it to illustrate a point. Now, perform a <code>git status</code></p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+# Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+#   (use "git pull" to update your local branch)
+#
+nothing to commit, working directory clean
+</code></pre>
+
+<p>This time we're <em>behind</em> <code>origin/master</code> by 1 commit. In order to synchronize our local <code>master</code> branch with the remote, we can use the <code>git pull</code> command</p>
+
+<pre lang="Shell"><code>$ git pull
+Updating 025c6a6..50d5492
+Fast-forward
+ README.txt | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+</code></pre>
+
+<p>If you check <code>git status</code> and <code>git log</code>, you'll see that we're now synched with the remote <code>master</code> branch.</p>
+
+<pre lang="Shell"><code>$ git status
+# On branch master
+nothing to commit, working directory clean
+
+$ git log --graph --decorate --oneline
+* 50d5492 (HEAD, origin/master, master) Updated README.txt
+* 025c6a6 Minor change to README.txt
+* 45c63f5 Adds documentation about awesome new feature
+* 3083bd3 Adds .gitignore to project
+* 6d443f3 Updated README with license information
+* 4634299 Initial Commit
+</code></pre>
+
+<h4>
+<a name="cloning-repositories" class="anchor" href="#cloning-repositories"><span class="octicon octicon-link"></span></a>Cloning Repositories</h4>
+
+<p>There are two main approaches for getting a Git project - initializing a Git repository within an existing directory or cloning an existing repository. We've already seen how to do the first one so let's take a look at how we clone an existing repository.</p>
+
+<p>To clone, the first thing you'll need is the <em>clone url</em> of the repository. Go to the Github project page for this Employee Guide (<a href="https://github.com/fmitech/platypus-node">https://github.com/fmitech/platypus-node</a>). In the right-hand navigation control, you'll see <em>HTTPS clone URL</em> (or <em>SSH clone URL</em>). If you previously setup HTTPS Authentication, make sure you use the <em>HTTPS clone URL</em>. If you previously setup SSH Authentication, make sure you use the <em>SSH clone URL</em>. If you setup both, you can use either one. Copy the URL into your clipboard (or click the little button next to the URL).</p>
+
+<p>Open the Terminal and navigate to your your <code>Development</code> directory</p>
+
+<pre lang="Shell"><code>$ cd ~/Development
+</code></pre>
+
+<p>To clone the repository, we'll use the <code>git clone</code> command</p>
+
+<pre lang="Shell"><code>$ git clone https://github.com/fmitech/platypus-node.git
+Cloning into 'platypus-node'...
+remote: Reusing existing pack: 149, done.
+remote: Total 149 (delta 0), reused 0 (delta 0)
+Receiving objects: 100% (149/149), 24.74 KiB | 0 bytes/s, done.
+Resolving deltas: 100% (77/77), done.
+Checking connectivity... done
+</code></pre>
+
+<blockquote>
+<p>If you're using HTTPS Authentication, you'll be asked to provide your Github username and password in the above step. If you're using SSH Authentication, you shouldn't be prompted provided you used the <em>SSH clone URL</em>.</p>
+</blockquote>
+
+<p>That's it, you have now successfully cloned an existing Git repository. Go into the directory and do a <code>git status</code> if you'd like to confirm. Otherwise, open the project within your text editor and start contributing!</p>
+
+<h5>
+<a name="a-note-about-cloning-and-branches" class="anchor" href="#a-note-about-cloning-and-branches"><span class="octicon octicon-link"></span></a>A note about cloning and branches</h5>
+
+<p>When you clone an existing repository, by default, only the master branch will be checked out even though the project may have several other branches. For example, the Employee Guide has both a <code>master</code> and a <code>development</code> branch. To see all branches (local and remote) we can use the <code>git branch</code> command with the <code>-a</code> option</p>
+
+<pre lang="Shell"><code>$ git branch -a
+output
+</code></pre>
+
+<p>To actually checkout the <code>development</code> branch and have it track the remote <code>development</code> branch, we can again use the <code>git checkout</code> command with the <code>-b</code> option (like we used when creating branches) but this time also provide a second argument, the name of the remote branch</p>
+
+<pre lang="Shell"><code>$ git checkout -b development origin/development
+output
+</code></pre>
+
+<p>You are now tracking both the <code>master</code> and <code>development</code> branches.</p>
+
+<h3>
+<a name="git-workflow" class="anchor" href="#git-workflow"><span class="octicon octicon-link"></span></a>Git Workflow</h3>
+
+<p>Now that you have a basic understanding of how to use Git, we'll move onto workflows. A Git workflow establishes a set of practices on how to use Git in day to day development. While there is no <em>"the one"</em> workflow (indeed it really depends on the project), we've had great success using the flow introduced by Vincent Driessen. Read through it <a href="http://nvie.com/posts/a-successful-git-branching-model/?">here</a>. It is important that you understand the workflow as you'll be using it daily when developing.</p>
+
+<h3>
+<a name="a-note-about-gui-git" class="anchor" href="#a-note-about-gui-git"><span class="octicon octicon-link"></span></a>A note about GUI Git</h3>
+
+<p>While there are numerous GUI clients available for Git, none of them come close to the power you get from using the command line. However, there is one GUI tool that greatly simplifies one aspect of working with Git - staging and committing files. In our examples above, we used the <code>git add</code> command to stage files followed by the <code>git commit -m</code> command to actually commit them. Instead, we can use <a href="http://gitx.frim.nl/">GitX</a>. The tool is already installed on your workstation and can be invoked via the <code>gitx</code> command from within your working copy.</p>
+      </section>
+    </div>
+    <footer>
+      <p>Project maintained by <a href="https://github.com/fmitech">fmitech</a></p>
+      <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
+    </footer>
+    <!--[if !IE]><script>fixScale(document);</script><![endif]-->
+    
+  </body>
+</html>
