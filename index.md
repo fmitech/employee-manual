@@ -52,7 +52,7 @@ Some useful plugins have already been installed.
 
 In addition, the following preferences have also been set. Feel free to customize these to your liking. To modify, _Preferences > Settings - User_.
 
-```JSON
+~~~JSON
 {
     "auto_complete": true,
     "auto_complete_commit_on_tab": true,
@@ -94,7 +94,7 @@ In addition, the following preferences have also been set. Feel free to customiz
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true
 }
-```
+~~~
 
 #### Git, Gitx
 
