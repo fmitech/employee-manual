@@ -52,7 +52,7 @@ Some useful plugins have already been installed.
 
 In addition, the following preferences have also been set. Feel free to customize these to your liking. To modify, _Preferences > Settings - User_.
 
-~~~JSON
+{% highlight JSON %}
 {
     "auto_complete": true,
     "auto_complete_commit_on_tab": true,
@@ -94,7 +94,7 @@ In addition, the following preferences have also been set. Feel free to customiz
     "translate_tabs_to_spaces": true,
     "trim_trailing_white_space_on_save": true
 }
-~~~
+{% endhighlight %}
 
 #### Git, Gitx
 
@@ -108,10 +108,10 @@ We use [Git](http://git-scm.com/) as our SCM of choice and the latest version ha
 
 To use:
 
-```Shell
+{% highlight Console %}
 $ brew install redis
 $ brew cask install google-drive
-```
+{% endhighlight %}
 
 #### RVM
 
@@ -119,21 +119,21 @@ $ brew cask install google-drive
 
 Listing installed rubies:
 
-```Shell
+{% highlight bash %}
 $ rvm list
-```
+{% endhighlight %}
 
 Installing a version of ruby
 
-```Shell
+{% highlight bash %}
 $ rvm install ruby-2.1.0
-```
+{% endhighlight %}
 
 Using a version of ruby
 
-```Shell
+{% highlight bash %}
 $ rvm use ruby-2.1.0
-```
+{% endhighlight %}
 
 It is recommended that you read the [RVM Documentation](http://rvm.io/), in particular the sections about [upgrading](http://rvm.io/rvm/upgrading), [installing rubies](http://rvm.io/rubies/installing), [setting a default ruby](http://rvm.io/rubies/default), [gemsets](http://rvm.io/gemsets), and [best practices](http://rvm.io/rvm/best-practices).
 
@@ -200,19 +200,19 @@ To configure these settings, you'll need to open up your terminal.
 
 First you need to tell git your name, so that it can properly label the commits you make.
 
-```Shell
+{% highlight bash %}
 $ git config --global user.name "Your Name Here"
 # Sets the default name for git to use when you commit
-```
+{% endhighlight %}
 
 #### Email
 
 Git saves your email address into the commits you make. Sites like Github use this information to associate your commits with your Github account. Your email address should be the same one associated with your Github/Bitbucket account.
 
-```Shell
+{% highlight bash %}
 $ git config --global user.email "your_email@example.com"
 # Sets the default email for git to use when you commit
-```
+{% endhighlight %}
 
 #### HTTPS Authentication
 
@@ -222,16 +222,16 @@ When you clone a HTTPS repo, you'll be asked to provide your username and passwo
 
 This should already be configured on your system as Git was installed via Homebrew. As a sanity check, verify that your credential.helper is properly set
 
-```Shell
+{% highlight bash %}
 $ git config --global credential.helper
 osxkeychain
-```
+{% endhighlight %}
 
 > On Linux this is slightly different. The credential.helper will store your credentials in memory for a certain time (default is 15 minutes). You can change this timeout if you like
-```Shell
+{% highlight bash %}
 $ git config --global credential.helper 'cache --timeout=3600'
 # Set the cache to timeout after 1 hour (setting is in seconds)
-```
+{% endhighlight %}
 
 #### SSH Authentication
 
@@ -241,34 +241,34 @@ When you clone a repo using SSH, your SSH keys are used for authentication. The 
 
 To generate a new SSH key, copy and paste the text below, making sure to substitute in your email. The default settings are preferred, so when you're asked to "enter a file in which to save the key,"" just press enter to continue.
 
-```Shell
+{% highlight bash %}
 $ ssh-keygen -t rsa -C "your_email@example.com"
 # Creates a new ssh key, using the provided email as a label
 # Generating public/private rsa key pair.
 # Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
-```
+{% endhighlight %}
 
 Next, you'll be asked to enter a passphrase. Please don't leave these blank, enter an actuall passphrase.
 
-```Shell
+{% highlight bash %}
 Enter passphrase (empty for no passphrase): [Type a passphrase]
 # Enter same passphrase again: [Type passphrase again]
-```
+{% endhighlight %}
 
 Which should give you something like this:
 
-```Shell
+{% highlight bash %}
 Your identification has been saved in /Users/you/.ssh/id_rsa.
 # Your public key has been saved in /Users/you/.ssh/id_rsa.pub.
 # The key fingerprint is:
 # 01:0f:f4:3b:ca:85:d6:17:a1:7d:f0:68:9d:f0:a2:db your_email@example.com
-```
+{% endhighlight %}
 
 To prevent entering your passphrase over and over again, add your new key to the ssh-agent.
 
-```Shell
+{% highlight bash %}
 $ ssh-add id_rsa
-```
+{% endhighlight %}
 
 ##### Adding your SSH key to Github and Bitbucket
 
@@ -284,28 +284,28 @@ This section describes the basics of using Git. You'll learn how to initialize a
 
 Start by creating a new folder anywhere on you filesystem. In these examples we're using the Destkop.
 
-```Shell
+{% highlight bash %}
 $ cd ~/Desktop
 $ mkdir my-awesome-project && cd my-awesome-project
-```
+{% endhighlight %}
 
 Within the newly created folder, create a `README.txt` file (afterall, all awesome projects contain a README). Using an editor, add some content to the README file.
 
-```Shell
+{% highlight bash %}
 $ touch README.txt
 $ echo "This is my awesome project." >> README.txt
-```
+{% endhighlight %}
 
 Great, our project is underway and while we don't have much, it's never to early to start tracking your changes with Git. Start by initializing a Git repository within our project folder.
 
-```Shell
+{% highlight bash %}
 $ git init
 Initialized empty Git repository in /Users/tdurden/Desktop/my-awesome-project/.git/
-```
+{% endhighlight %}
 
 With Git initialized, we can now use the `git` command within this directory to perform various operations. Let's start by checking the status.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 #
@@ -316,7 +316,7 @@ $ git status
 #
 #   README.txt
 nothing added to commit but untracked files present (use "git add" to track)
-```
+{% endhighlight %}
 
 The `git status` command provides information about the current state of our repository. It tells us that we're on the `master` branch (more on this later) and it tells us that we have some untracked files (the README.txt file that we created in the previous step).
 
@@ -324,7 +324,7 @@ The `git status` command provides information about the current state of our rep
 
 When you create new files within a Git repository, they are untracked by default. You need to tell Git to track the files you want. As you may have guessed from the output of `git status`, tracking of files is done via the `git add` command. Let's track the README.txt file we created earlier and check the output of `git status` again.
 
-```Shell
+{% highlight bash %}
 $ git add README.txt
 $ git status
 # On branch master
@@ -336,7 +336,7 @@ $ git status
 #
 #   new file:   README.txt
 #
-```
+{% endhighlight %}
 
 Git is now tracking our README.txt file. From the output of `git status`, we can see that Git recognizes our README.txt as a new file.
 
@@ -346,20 +346,20 @@ Git is now tracking our README.txt file. From the output of `git status`, we can
 
 We're satisfied with the current state of our project so let's go ahead and commit our changes. You can think of commits as _snapshots_ of your project during a point in time.
 
-```Shell
+{% highlight bash %}
 $ git commit -m "Initial Commit"
 [master (root-commit) 4634299] Initial Commit
  1 file changed, 1 insertion(+)
  create mode 100644 README.txt
-```
+{% endhighlight %}
 
 Great, our project state is now saved. We can once again perform a `git status` to ensure we didn't miss anything.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 The output is fairly self-explanitory. We have nothing to commit (we just committed our changes) and our working directory is clean (we don't have any conflicts or untracked files).
 
@@ -367,15 +367,15 @@ The output is fairly self-explanitory. We have nothing to commit (we just commit
 
 Let's make some more changes to our `README.txt` file. Awesome projects always include license info so let's add that next. Open `README.txt` in your favourite editor and change its contents as follows:
 
-```Text
+{% highlight Text %}
 This is my awesome open source project.
 
 Released under the MIT License.
-```
+{% endhighlight %}
 
 Save the file. Let's perform a `git status` to see where we're at.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 # Changes not staged for commit:
@@ -383,16 +383,16 @@ $ git status
 #   (use "git checkout -- <file>..." to discard changes in working directory)
 #
 #   modified:   README.txt
-```
+{% endhighlight %}
 
 Because git is already tracking `README.txt`, the output now shows that it has been modified. Let's save the state by first staging the file and then committing.
 
-```Shell
+{% highlight bash %}
 $ git add README.txt
 $ git commit -m "Updated README with license information"
 [master 6d443f3] Updated README with license information
  1 file changed, 3 insertions(+), 1 deletion(-)
-```
+{% endhighlight %}
 
 > The above might be confusing at first. Why are we calling `git add` again? Why is saving state a 2-step process? To answer this, we need to introduce the concept of a __staging area__. Most version control systems use 2 places to store data, your working copy (the files and folders you're currently using) and the datastore (where the version control software decides how to pack and store your changes). In Git, there is a 3rd place called the _staging area_ or _index_. Using the staging area decouples the changes made to the working copy and what gets saved in Git by allowing the developer to build up their commits however they want.
 
@@ -402,13 +402,13 @@ $ git commit -m "Updated README with license information"
 
 Next, we'll want to create a small text file to keep track of any minor _todos_ we need to perform as we're developing a specific feature. Go ahead and create the file.
 
-```Shell
+{% highlight bash %}
 $ touch todos.txt
-```
+{% endhighlight %}
 
 Let's do a `git status` to see where we're at
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 # Untracked files:
@@ -416,7 +416,7 @@ $ git status
 #
 #   todos.txt
 nothing added to commit but untracked files present (use "git add" to track)
-```
+{% endhighlight %}
 
 Now if you think about it, this file doesn't really belong in source control. After all, the file will be specific to the developer using it and won't benefit from being versioned. Let's ask Git to ignore this file.
 
@@ -424,19 +424,19 @@ Ignoring files in Git is super easy and accomplished by adding a special `.gitig
 
 Let's start by creating the `.gitignore` file
 
-```Shell
+{% highlight bash %}
 $ touch .gitignore
-```
+{% endhighlight %}
 
 Open this newly created file inside your favourite editor, add the following line and save the changes.
 
-```Text
+{% highlight Text %}
 todos.txt
-```
+{% endhighlight %}
 
 Let's do a `git status` to see if that worked.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 # Untracked files:
@@ -444,12 +444,12 @@ $ git status
 #
 #   .gitignore
 nothing added to commit but untracked files present (use "git add" to track)
-```
+{% endhighlight %}
 
 Hey great! `todos.txt` is no longer being listed and is being ignored by Git. As for the `.gitignore` file, that should be added to source control.
 
 
-```Shell
+{% highlight bash %}
 $ git add .gitignore
 $ git commit -m "Adds .gitignore to project"
 [master 3083bd3] Adds .gitignore to project
@@ -459,7 +459,7 @@ $ git commit -m "Adds .gitignore to project"
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 > The `.gitignore` file isn't only limited to matching files. You can ignore entire folders and specify glob patterns for ignoring certain types of files (e.g. `*.log`)
 
@@ -469,26 +469,26 @@ nothing to commit, working directory clean
 
 If you would like to revert a commit, Git provides several options that vary in how they modify the working copy. Each option is useful depending on your scenario. To illustrate the options, let's create a new file called `test.txt` and add some content.
 
-```Shell
+{% highlight bash %}
 $ touch test.txt
 $ echo "This is only a test" >> text.txt
-```
+{% endhighlight %}
 
 Next we'll add and commit this new file like we did previously with our README
 
-```Shell
+{% highlight bash %}
 $ git add test.txt
 $ git commit -m "Adds text.txt for testing"
 [master 01d4b04] Adds text.txt for testing
  1 file changed, 1 insertion(+)
  create mode 100644 test.txt
-```
+{% endhighlight %}
 
 ##### Normal revert
 
 If we forgot to add something to the commit or forgot to include a modification, we can use the `git reset` command to do a normal revert.
 
-```Shell
+{% highlight bash %}
 $ git reset HEAD~1
 $ git status
 # On branch master
@@ -497,7 +497,7 @@ $ git status
 #
 #   test.txt
 nothing added to commit but untracked files present (use "git add" to track)
-```
+{% endhighlight %}
 
 As we can see, a normal revert will return the working copy to the state it was prior to staging and committing.
 
@@ -507,7 +507,7 @@ Add and commit the file again before continueing.
 
 If we made a spelling mistake in our commit message or want to modify it slightly while leaving all committed changes in the staging area, we can use `git reset` with the `--soft` option.
 
-```Shell
+{% highlight bash %}
 $ git reset --soft HEAD~1
 $ git status
 # On branch master
@@ -516,16 +516,16 @@ $ git status
 #
 #   new file:   test.txt
 #
-```
+{% endhighlight %}
 
 As we can see, a soft revert will leave the reverted changes in the staging area. This is especially useful if all you're doing is modifying the commit message.
 
 Before we continue, let's unstage and remove the `test.txt` file as we'll no longer need it.
 
-```Shell
+{% highlight bash %}
 $ git reset HEAD test.txt
 $ rm test.txt
-```
+{% endhighlight %}
 
 ##### Hard revert
 
@@ -533,32 +533,32 @@ If we completely messed up a previous commit and want to return our working copy
 
 To illustrate this, modify the README file
 
-```Text
+{% highlight text %}
 This is my awesome open source project.
 
 Released under the MIT License.
 
 THIS CHANGE WILL ULTIMATELY BE EREASED
-```
+{% endhighlight %}
 
 Commit the changes
 
-```Shell
+{% highlight bash %}
 $ git add README.txt
 $ git commit -m "Modifies README"
 [master bb55d36] Modifies README
  1 file changed, 3 insertions(+), 1 deletion(-)
-```
+{% endhighlight %}
 
 Now, revert the changes
 
-```Shell
+{% highlight bash %}
 $ git reset --hard HEAD~1
 HEAD is now at 3083bd3 Adds .gitignore to project
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 As you can see, using the `--hard` option will not only revert the commit, but will also discard any changes made in that commit from the working copy, essentialy restoring it to the state of a previous commit.
 
@@ -580,11 +580,11 @@ We'll see later how we can use Git's awesome branching and merging functionality
 
 We've already seen one example of a branch. Recall the output of `git status` within our project directory.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 As you can see, all git repositories start with a main branch called the _master_ branch. Typically this branch will be the main line of development with branches diverging from and merging to this branch.
 
@@ -592,31 +592,31 @@ As you can see, all git repositories start with a main branch called the _master
 
 Let's introduce two new git commands. The first, `git branch` will list all branches in the repository. The second `git checkout` will allow to switch between branches as well as create new branches.
 
-```Shell
+{% highlight bash %}
 $ git branch
 * [1] master
-```
+{% endhighlight %}
 
 Right now we only have one branch, `master`. Let's create a new branch to isolate a new feature we want to work on. To create a new branch, use the `git checkout` command with the `-b` option followed by the name of the branch you would like created
 
-```Shell
+{% highlight bash %}
 $ git checkout -b awesome-new-feature
 Switched to a new branch 'awesome-new-feature'
-```
+{% endhighlight %}
 
 The above creates a new branch called `awesome-new-feature` and git has automatically switched to this new branch. Let's take a look at the output of `git branch`
 
-```Shell
+{% highlight bash %}
 $ git branch
 * [1] awesome-new-feature
   [2] master
-```
+{% endhighlight %}
 
 As expected, we now have two branches. The asterisk (\*) indicates the currently selected branch.
 
 Let's once again modify the `README.txt` file with some information about our new feature. Open the file within your text editor and modify it to include the following
 
-```Text
+{% highlight Text %}
 This is my awesome open source project.
 
 Features
@@ -624,16 +624,16 @@ Features
 - awesome new feature
 
 Released under the MIT License.
-```
+{% endhighlight %}
 
 As we've done previously, let's commit this changeset.
 
-```Shell
+{% highlight bash %}
 $ git add README.txt 
 $ git commit -m "Adds documentation about awesome new feature"
 [awesome-new-feature 45c63f5] Adds documentation about awesome new feature
  1 file changed, 4 insertions(+)
-```
+{% endhighlight %}
 
 The output of the commit command will show you the branch along with the commit number (in our case, we've just commited to the `awesome-new-feature` branch and our commit number is `45c63f5`)
 
@@ -641,17 +641,17 @@ The output of the commit command will show you the branch along with the commit 
 
 Let's confirm that the changes we just made did not in fact affect the master branch. We can use the `git log` command to view recent commits.
 
-```Shell
+{% highlight bash %}
 $ git log --graph --decorate --oneline 
 * 45c63f5 (HEAD, awesome-new-feature) Adds documentation about awesome new feature
 * 3083bd3 (master) Adds .gitignore to project
 * 6d443f3 Updated README with license information
 * 4634299 Initial Commit
-```
+{% endhighlight %}
 
 The `git log` command shows the commit hash, branch information, and commit messages of recent commits. As we can see, our last commit was made to the `awesome-new-feature` branch. Let's switch back to the master branch and see the output of `git log`. We can switch between branches using the `git checkout` command.
 
-```Shell
+{% highlight bash %}
 $ git checkout master
 Switched to branch 'master'
 
@@ -659,7 +659,7 @@ $ git log --graph --decorate --oneline
 * 3083bd3 (HEAD, master) Adds .gitignore to project
 * 6d443f3 Updated README with license information
 * 4634299 Initial Commit
-```
+{% endhighlight %}
 
 As you can see, the changes we made in the `awesome-new-feature` branch did not affect the master branch. If you open the `README.txt` file in your editor, you'll notice that the changes we added are not there.
 
@@ -667,32 +667,32 @@ As you can see, the changes we made in the `awesome-new-feature` branch did not 
 
 We're satisfied with our awesome new feature and we now want to merge the commits in our `awesome-new-feature` branch back into the `master` branch. This is done via the `git merge` command.
 
-```Shell
+{% highlight bash %}
 $ git merge awesome-new-feature
 Updating 3083bd3..45c63f5
 Fast-forward
  README.txt | 4 ++++
  1 file changed, 4 insertions(+)
-```
+{% endhighlight %}
 
 Don't worry about the output of the merge command just yet, we'll explain the concepts of _fast-forward_ and _rebase_ later in this guide. For now, let's focus on the state of our working copy. Take another look at the output of the `git log` command.
 
-```Shell
+{% highlight bash %}
 $ git log --graph --decorate --oneline
 * 45c63f5 (HEAD, master, awesome-new-feature) Adds documentation about awesome new feature
 * 3083bd3 Adds .gitignore to project
 * 6d443f3 Updated README with license information
 * 4634299 Initial Commit
-```
+{% endhighlight %}
 
 The output shows that our working copy (`HEAD`), the master branch, and the awesome-new-feature branch are all pointing to the same last commit, meaning our changes have been successfully merged back into our master branch. If you inspect the `README.txt` file now, you'll notice that it's been updated with the modificatios we made in the `awesome-new-feature` branch.
 
 Since we're done with the `awesome-new-feature` branch, let's go ahead and delete it. This is accomplished with the `git branch` command and the `-d` option.
 
-```Shell
+{% highlight bash %}
 $ git branch -d awesome-new-feature
 Deleted branch awesome-new-feature (was 45c63f5).
-```
+{% endhighlight %}
 
 #### Working with Remotes
 
@@ -704,13 +704,13 @@ Login to Github and create a new repository. Name the repository as `my-awesome-
 
 The repo has been created and now Github provides us with some helpful hints on how to proceed. We'll want to follow the steps outlined in the second option as we've already created a Git repository in previous steps. We'll start by first adding a remote using the `git remote add` command
 
-```Shell
+{% highlight bash %}
 $ git remote add origin git@github.com:your-username/my-awesome-project.git
-```
+{% endhighlight %}
 
 Next, we'll want to synchronize our local repository with the remote repository by _pushing_ our local changes to the remote. This is accomplished with the `git push` command
 
-```Shell
+{% highlight bash %}
 $ git push -u origin master
 Counting objects: 12, done.
 Delta compression using up to 8 threads.
@@ -720,7 +720,7 @@ Total 12 (delta 0), reused 0 (delta 0)
 To git@github.com:bjedrocha/my-awesome-project.git
  * [new branch]      master -> master
 Branch master set up to track remote branch master from origin.
-```
+{% endhighlight %}
 
 If you now refresh the Github project page, you'll notice that our files and changes have been synchronized with the remote. We can now invite other collaborators to contribute to our project.
 
@@ -730,27 +730,27 @@ If you now refresh the Github project page, you'll notice that our files and cha
 
 Open the `README.txt` file in your editor and make some change (whatever you want). Next, we'll commit this change as we've done previously.
 
-```Shell
+{% highlight bash %}
 $ git add README.txt
 $ git commit -m "Minor change to README.txt"
 [master 025c6a6] Minor change to README.txt
  1 file changed, 1 insertion(+)
-```
+{% endhighlight %}
 
 Go back to the repo's Github page and click the _commits_ link to view the commits to this project. What gives? Our last commit isn't listed. Let's go back into the terminal and run `git status`.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 # Your branch is ahead of 'origin/master' by 1 commit.
 #   (use "git push" to publish your local commits)
 #
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 In the previous step when we first pushed our changes to the remote with the `git push` command, we added the `-u` option to have our local `master` branch track the remote `master` branch. Now we can see that Git is using this information to tell is that our local `master` branch is ahead of the remote `master` branch (`origin/master`) by 1 commit. In order to publish our changes and synchronize our local branch with the remote, we'll need to use `git push` to push up the changes.
 
-```Shell
+{% highlight bash %}
 $ git push
 Counting objects: 5, done.
 Delta compression using up to 8 threads.
@@ -759,15 +759,15 @@ Writing objects: 100% (3/3), 324 bytes | 0 bytes/s, done.
 Total 3 (delta 1), reused 0 (delta 0)
 To git@github.com:bjedrocha/my-awesome-project.git
    45c63f5..025c6a6  master -> master
-```
+{% endhighlight %}
 
 Let's quickly run `git status` again to see where we're at.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 Excellent, Git no longer says that we're ahead of `origin/master` by 1 commit. Indeed, if you go back to the commits page on Github and refresh, you'll now see our last commit.
 
@@ -775,34 +775,34 @@ In the same way that we must _push_ our changes to see them reflected on the rem
 
 If you view the commit history on the Github page, you'll notice our last commit is listed. Let's go back to the terminal and for illustrative purposes, run the following command
 
-```Shell
+{% highlight bash %}
 $ git remote update
-```
+{% endhighlight %}
 
 Don't worry about the command for now, we're just using it to illustrate a point. Now, perform a `git status`
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 # Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
 #   (use "git pull" to update your local branch)
 #
 nothing to commit, working directory clean
-```
+{% endhighlight %}
 
 This time we're _behind_ `origin/master` by 1 commit. In order to synchronize our local `master` branch with the remote, we can use the `git pull` command
 
-```Shell
+{% highlight bash %}
 $ git pull
 Updating 025c6a6..50d5492
 Fast-forward
  README.txt | 3 ++-
  1 file changed, 2 insertions(+), 1 deletion(-)
-```
+{% endhighlight %}
 
 If you check `git status` and `git log`, you'll see that we're now synched with the remote `master` branch.
 
-```Shell
+{% highlight bash %}
 $ git status
 # On branch master
 nothing to commit, working directory clean
@@ -814,7 +814,7 @@ $ git log --graph --decorate --oneline
 * 3083bd3 Adds .gitignore to project
 * 6d443f3 Updated README with license information
 * 4634299 Initial Commit
-```
+{% endhighlight %}
 
 #### Cloning Repositories
 
@@ -824,13 +824,13 @@ To clone, the first thing you'll need is the _clone url_ of the repository. Go t
 
 Open the Terminal and navigate to your your `Development` directory
 
-```Shell
+{% highlight bash %}
 $ cd ~/Development
-```
+{% endhighlight %}
 
 To clone the repository, we'll use the `git clone` command
 
-```Shell
+{% highlight bash %}
 $ git clone https://github.com/fmitech/platypus-node.git
 Cloning into 'platypus-node'...
 remote: Reusing existing pack: 149, done.
@@ -838,7 +838,7 @@ remote: Total 149 (delta 0), reused 0 (delta 0)
 Receiving objects: 100% (149/149), 24.74 KiB | 0 bytes/s, done.
 Resolving deltas: 100% (77/77), done.
 Checking connectivity... done
-```
+{% endhighlight %}
 
 > If you're using HTTPS Authentication, you'll be asked to provide your Github username and password in the above step. If you're using SSH Authentication, you shouldn't be prompted provided you used the _SSH clone URL_.
 
@@ -848,17 +848,17 @@ That's it, you have now successfully cloned an existing Git repository. Go into 
 
 When you clone an existing repository, by default, only the master branch will be checked out even though the project may have several other branches. For example, the Employee Guide has both a `master` and a `development` branch. To see all branches (local and remote) we can use the `git branch` command with the `-a` option
 
-```Shell
+{% highlight bash %}
 $ git branch -a
 output
-```
+{% endhighlight %}
 
 To actually checkout the `development` branch and have it track the remote `development` branch, we can again use the `git checkout` command with the `-b` option (like we used when creating branches) but this time also provide a second argument, the name of the remote branch
 
-```Shell
+{% highlight bash %}
 $ git checkout -b development origin/development
 output
-```
+{% endhighlight %}
 
 You are now tracking both the `master` and `development` branches.
 
