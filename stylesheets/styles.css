@@ -1,35 +1,20 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300italic,700italic,300,700);
 html {
-  background: #6C7989;
-  background: #6c7989 -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #6c7989), color-stop(100%, #434b55)) fixed;
-  background: #6c7989 -webkit-linear-gradient(#6c7989, #434b55) fixed;
-  background: #6c7989 -moz-linear-gradient(#6c7989, #434b55) fixed;
-  background: #6c7989 -o-linear-gradient(#6c7989, #434b55) fixed;
-  background: #6c7989 -ms-linear-gradient(#6c7989, #434b55) fixed;
-  background: #6c7989 linear-gradient(#6c7989, #434b55) fixed;
 }
 
 body {
-  padding: 50px 0;
+  padding: 20px 0;
   margin: 0;
   font: 14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #555;
   font-weight: 300;
-  background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAeCAYAAABNChwpAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAALEgAACxIB0t1+/AAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNXG14zYAAAAUdEVYdENyZWF0aW9uIFRpbWUAMy82LzEygrTcTAAAAFRJREFUSIljfPDggZRf5RIGGNjUHsNATz6jXmSL1Kb2GLiAX+USBnrymRgGGDCORgFmoNAXjEbBaBSMRsFoFIxGwWgUjEbBaBSMRsFoFIxGwWgUAABYNujumib3wAAAAABJRU5ErkJggg==') fixed;
+  background-color: #f6f6f6;
+  background-image: url('../images/bg.png');
 }
 
 .wrapper {
   width: 800px;
   margin: 0 auto;
-  background: #DEDEDE;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-  border-radius: 8px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px;
-  -moz-box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px;
-  box-shadow: rgba(0, 0, 0, 0.2) 0 0 0 1px, rgba(0, 0, 0, 0.45) 0 3px 10px;
 }
 
 header, section, footer {
@@ -52,21 +37,9 @@ strong {
 }
 
 header {
-  -webkit-border-radius: 8px 8px 0 0;
-  -moz-border-radius: 8px 8px 0 0;
-  -ms-border-radius: 8px 8px 0 0;
-  -o-border-radius: 8px 8px 0 0;
-  border-radius: 8px 8px 0 0;
-  background: #C6EAFA;
-  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #ddfbfc), color-stop(100%, #c6eafa));
-  background: -webkit-linear-gradient(#ddfbfc, #c6eafa);
-  background: -moz-linear-gradient(#ddfbfc, #c6eafa);
-  background: -o-linear-gradient(#ddfbfc, #c6eafa);
-  background: -ms-linear-gradient(#ddfbfc, #c6eafa);
-  background: linear-gradient(#ddfbfc, #c6eafa);
   position: relative;
   padding: 15px 20px;
-  border-bottom: 1px solid #B2D2E1;
+  margin-bottom: 20px;
 }
 header h1 {
   margin: 0;
@@ -174,21 +147,14 @@ header ul a strong {
   -webkit-font-smoothing: antialiased;
 }
 
+header .logo-container {
+  /* stretch the image slightly */
+  margin: 0 -60px 0 -60px;
+}
+
 section {
   padding: 15px 20px;
   font-size: 15px;
-  border-top: 1px solid #fff;
-  background: -webkit-gradient(linear, 50% 0%, 50% 700, color-stop(0%, #fafafa), color-stop(100%, #dedede));
-  background: -webkit-linear-gradient(#fafafa, #dedede 700px);
-  background: -moz-linear-gradient(#fafafa, #dedede 700px);
-  background: -o-linear-gradient(#fafafa, #dedede 700px);
-  background: -ms-linear-gradient(#fafafa, #dedede 700px);
-  background: linear-gradient(#fafafa, #dedede 700px);
-  -webkit-border-radius: 0 0 8px 8px;
-  -moz-border-radius: 0 0 8px 8px;
-  -ms-border-radius: 0 0 8px 8px;
-  -o-border-radius: 0 0 8px 8px;
-  border-radius: 0 0 8px 8px;
   position: relative;
 }
 
@@ -221,15 +187,24 @@ h3, h4, h5, h6 {
 
 blockquote {
   margin: 0 -20px 20px;
-  padding: 15px 20px 1px 40px;
+  padding: 15px 40px 1px 40px;
   font-style: italic;
   background: #ccc;
   background: rgba(0, 0, 0, 0.06);
   color: #222;
+  border-radius: 8px;
 }
 
 img {
   max-width: 100%;
+}
+
+code {
+  border-radius: 3px;
+  padding-right: 5px;
+  padding-left: 5px;
+  white-space: nowrap;
+  background-color: rgba(0,0,0,0.1);
 }
 
 code, pre {
@@ -244,9 +219,15 @@ pre {
   background: #3A3C42;
   color: #f8f8f2;
   margin: 0 -20px 20px;
+  border-radius: 8px;
 }
 pre code {
   color: #f8f8f2;
+  /* reset */
+  border-radius: 0;
+  padding: 0;
+  white-space: inherit;
+  background-color: inherit;
 }
 li pre {
   margin-left: -60px;
@@ -278,10 +259,10 @@ small {
 }
 
 hr {
+  margin: 20px -20px 30px;
   border: 0;
-  background: #aaa;
-  height: 1px;
-  margin: 0 0 20px;
+  border-bottom: 1px dashed #ccc;
+  text-align: center;
 }
 
 footer {

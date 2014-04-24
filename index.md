@@ -3,7 +3,7 @@ layout: default
 title: Test
 ---
 
-# Welcome to Fluid Media
+## Welcome to Fluid Media
 
 The goal of this manual is to guide your first couple of weeks at Fluid Media. The manual is composed of several sections. The first couple of sections will help to introduce your workstations and the various tools you'll use in your everyday development, most notably source control.
 
@@ -185,6 +185,8 @@ Beanstalk is yet another hosted source control service provider although it only
 ### Trello
 
 Trello is an organization tool that provides virtual [Kanban](http://en.wikipedia.org/wiki/Kanban_board) boards. We use Trello to manage tasks for a particular project/sprint. The easiest way to get started with Trello is to signup via your Google (personal) account at [https://trello.com/signup](https://trello.com/signup). Once your account is created, we'll add you to the necessary organizations.
+
+*   *   *
 
 ## Git
 
@@ -395,7 +397,7 @@ $ git commit -m "Updated README with license information"
 {% endhighlight %}
 
 > The above might be confusing at first. Why are we calling `git add` again? Why is saving state a 2-step process? To answer this, we need to introduce the concept of a __staging area__. Most version control systems use 2 places to store data, your working copy (the files and folders you're currently using) and the datastore (where the version control software decides how to pack and store your changes). In Git, there is a 3rd place called the _staging area_ or _index_. Using the staging area decouples the changes made to the working copy and what gets saved in Git by allowing the developer to build up their commits however they want.
-
+>
 > To give a practical example, suppose you went on a caffeine-fueled hacking frenzy and implemented several features and fixed numerous bugs without saving state in-between. Without a staging area, you'd most likely be forced to create a giant commit that encompasses all these features and bug fixes - not ideal as it makes reverting difficult. Having a staging area allows you to 'cherry-pick' and 'stage' the changes you want (even from a single file) before packaging it up in a commit. This allows you to create small succinct commits.
 
 #### Ignoring files
@@ -462,7 +464,7 @@ nothing to commit, working directory clean
 {% endhighlight %}
 
 > The `.gitignore` file isn't only limited to matching files. You can ignore entire folders and specify glob patterns for ignoring certain types of files (e.g. `*.log`)
-
+>
 > When working with frameworks like Ruby on Rails or .NET, you can find sample `.gitignore` files online that list commonly ignored components.
 
 #### Undoing commits
@@ -568,12 +570,12 @@ As you can see, using the `--hard` option will not only revert the commit, but w
 
 Gits real power lies in branching and merging. Branching allows you to diverge your code from the main line of development and continue to do work without messing with the main line. Similarly, merging allows to merge a divergent branch back into the main line of development.
 
-> ##### Why bother?
-
+> #### Why bother?
+>
 > Why not just modify and commit to the main line of development? While this process works fine for small projects with only one or two developers, it quickly breaks down as project complexity increases or more people are added to the project. 
-
+>
 > Here's a practical example. Let's assume that we have a web application that is already running in production and is being contributed to by several developers. One of these developers has been asked to implement an experimental feature that may or may not ship in a future version of the application. The commits for this experimental feature are all in the main line of development. Now let's assume that a critical bug has been discovered in production and another developer needs to quickly add a patch to fix the bug. Since all commits for this project are on the main line (including commits from an un-tested and partially implemented experimental feature) the developers now have a major problem. It will be difficult to commit the patch and deploy the fix without also exposing un-tested code to production.
-
+>
 > This is where branching comes in. The developer working on the experimental feature could have created a seperate branch to house all their commits, leaving the main line of development unaffected. When the critical bug is discovered, the other developer can quickly patch the main line of development without also introducing unwanted commits to production. Once the experimental feature is complete and tested, the feature can be merged back into the main line for inclusion in a future release.
 
 We'll see later how we can use Git's awesome branching and merging functionality to develop an ideal worflow for most projects. For now, let's just concentrate on the basics.
@@ -588,7 +590,7 @@ nothing to commit, working directory clean
 
 As you can see, all git repositories start with a main branch called the _master_ branch. Typically this branch will be the main line of development with branches diverging from and merging to this branch.
 
-##### Branching
+#### Branching
 
 Let's introduce two new git commands. The first, `git branch` will list all branches in the repository. The second `git checkout` will allow to switch between branches as well as create new branches.
 
@@ -663,7 +665,7 @@ $ git log --graph --decorate --oneline
 
 As you can see, the changes we made in the `awesome-new-feature` branch did not affect the master branch. If you open the `README.txt` file in your editor, you'll notice that the changes we added are not there.
 
-##### Merging
+#### Merging
 
 We're satisfied with our awesome new feature and we now want to merge the commits in our `awesome-new-feature` branch back into the `master` branch. This is done via the `git merge` command.
 
