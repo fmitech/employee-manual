@@ -31,13 +31,13 @@ There are tons of useful plugins available for Sublime Text. The vast majority o
 Sublime Text's command palette provides quick access to various functions. In can be invoked via keyboard shortcut: `cmd + shift + p`
 
 {:.figure}
-![Command Palette](/images/manual/sb3-commandPal.png)
+![Command Palette](./images/manual/sb3-commandPal.png)
 Press `cmd + shift + p` to bring up the Command Palette
 
 The command palette uses *fuzzy search* which means you can start typing a part of a command and the list of available commands will be filtered down to include only those with the partially typed word. E.g. you can start typing 'syntax' to bring up all the commands related to syntax highlighting. Type 'install' to use the Package Controll Install command.
 
 {:.figure}
-![Install Package](/images/manual/sb3-installPack.png)
+![Install Package](./images/manual/sb3-installPack.png)
 Type 'install' and select Package Control: Install Package
 
 Some useful plugins have already been installed.
@@ -111,7 +111,7 @@ In addition, the following preferences have also been set. Feel free to customiz
 We use [Git](http://git-scm.com/) as our SCM of choice and the latest version has been installed on your workstation. In addition, [Gitx](http://gitx.frim.nl/) has also been installed and provides a nice GUI for reviewing your changes prior to committing and viewing version history.
 
 {:.figure}
-![Gitx](/images/manual/gitx-commitEx.png)
+![Gitx](./images/manual/gitx-commitEx.png)
 
 #### Homebrew, Homebrew Cask
 
@@ -836,7 +836,7 @@ There are two main approaches for getting a Git project - initializing a Git rep
 To clone, the first thing you'll need is the _clone url_ of the repository. Go to the Github project page for this Employee Guide ([https://github.com/fmitech/employee-manual/tree/gh-pages](https://github.com/fmitech/employee-manual/tree/gh-pages)). In the right-hand navigation control, you'll see _HTTPS clone URL_ (or _SSH clone URL_). If you previously setup HTTPS Authentication, make sure you use the _HTTPS clone URL_. If you previously setup SSH Authentication, make sure you use the _SSH clone URL_. If you setup both, you can use either one. Copy the URL into your clipboard (or click the little button next to the URL).
 
 {:.figure}
-![Github Clone URL](/images/manual/github-cloneUrl.png)
+![Github Clone URL](./images/manual/github-cloneUrl.png)
 Click the links to select the appropriate URL based on your previously chosen authentication option (SSH or HTTPS)
 
 Open the Terminal and navigate to your your `Development` directory
@@ -961,17 +961,17 @@ While there are numerous GUI clients available for Git, none of them come close 
 When making a commit, bring up GitX via the `gitx` command. The GitX GUI is composed of two main views, the *History View* and the *Commit View* - both pretty self explanitory. To review and commit your changes, switch to the Commit View.
 
 {:.figure}
-![Gitx History View](/images/manual/gitx-histView.png)
+![Gitx History View](./images/manual/gitx-histView.png)
 The history view shows a log of all commits to a particular branch
 
 The Commit View shows unstaged files in the bottom left-hand corner. Selecting a modified file will show a diff of the changes made. The diff viewer also allows you to stage only certain sections of a file (this is especially handy when cherry picking your commits).
 
 {:.figure}
-![Gitx Commit View](/images/manual/gitx-commitView.png)
+![Gitx Commit View](./images/manual/gitx-commitView.png)
 The commit view allows you to stage/discard either all or partial changes made to a file
 
 To stage (add) files, simply right-click the file (or select multiple and right-click) and select *'Stage changes'*. The staged changes will now show in the bottom right hand corner of the screen. The last thing to do is to add a meaningfull commit message and click *'Commit'*
 
 {:.figure}
-![Gitx Commit View](/images/manual/gitx-stagedChanges.png)
+![Gitx Commit View](./images/manual/gitx-stagedChanges.png)
 Once you have staged your changes, enter a meaningful commit message
