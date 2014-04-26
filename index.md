@@ -954,4 +954,22 @@ That's it! Thanks for contributing.
 
 ## A note about GUI Git
 
-While there are numerous GUI clients available for Git, none of them come close to the power you get from using the command line. However, there is one GUI tool that greatly simplifies one aspect of working with Git - staging and committing files. In our examples above, we used the `git add` command to stage files followed by the `git commit -m` command to actually commit them. Instead, we can use [GitX](http://gitx.frim.nl/). The tool is already installed on your workstation and can be invoked via the `gitx` command from within your working copy.
+While there are numerous GUI clients available for Git, none of them come close to the power you get from using the command line. However, there is one GUI tool that greatly simplifies one aspect of working with Git - reviewing, staging and committing files. In our examples above, we used the `git add` command to stage files followed by the `git commit -m` command to actually commit them. Instead, we can use [GitX](http://gitx.frim.nl/). The tool is already installed on your workstation and can be invoked via the `gitx` command from within your working copy.
+
+When making a commit, bring up GitX via the `gitx` command. The GitX GUI is composed of two main views, the *History View* and the *Commit View* - both pretty self explanitory. To review and commit your changes, switch to the Commit View.
+
+{:.figure}
+![Gitx History View](/images/manual/gitx-histView.png)
+The history view shows a log of all commits to a particular branch
+
+The Commit View shows unstaged files in the bottom left-hand corner. Selecting a modified file will show a diff of the changes made. The diff viewer also allows you to stage only certain sections of a file (this is especially handy when cherry picking your commits).
+
+{:.figure}
+![Gitx Commit View](/images/manual/gitx-commitView.png)
+The commit view allows you to stage/discard either all or partial changes made to a file
+
+To stage (add) files, simply right-click the file (or select multiple and right-click) and select *'Stage changes'*. The staged changes will now show in the bottom right hand corner of the screen. The last thing to do is to add a meaningfull commit message and click *'Commit'*
+
+{:.figure}
+![Gitx Commit View](/images/manual/gitx-stagedChanges.png)
+Once you have staged your changes, enter a meaningful commit message
