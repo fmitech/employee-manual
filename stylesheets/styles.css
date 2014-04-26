@@ -283,6 +283,20 @@ footer p + p {
   float: right;
 }
 
+/* Supplementary styles */
+.figure {
+  display: block;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 8px;
+  background-color: #fff;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.figure code {
+  font-style: normal;
+}
+
 @media print, screen and (max-width: 740px) {
   body {
     padding: 0;

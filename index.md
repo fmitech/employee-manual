@@ -8,7 +8,7 @@ title: Test
 The goal of this manual is to guide your first couple of weeks at Fluid Media. The manual is composed of several sections. The first couple of sections will help to introduce your workstations and the various tools you'll use in your everyday development, most notably source control.
 
 > #### Note
-This manual is available on github. If you spot any errors, omissions, or would like to contribute, please don't hesitate to create a pull-request (this manual will explain how to that shortly)
+This manual is available on [Github](https://github.com/fmitech/employee-manual/tree/gh-pages). If you spot any errors, omissions, or would like to contribute, please don't hesitate to create a pull-request (this manual will explain how to that shortly :)
 
 ## Workstations
 
@@ -28,7 +28,17 @@ A great text editor. [More information.](http://www.sublimetext.com/3)
 
 There are tons of useful plugins available for Sublime Text. The vast majority of them can be installed via [Package Control](https://sublime.wbond.net/). You can browse packages [online](https://sublime.wbond.net/browse) and then use the Command Palette to install.
 
-(insert how-to pics here)
+Sublime Text's command palette provides quick access to various functions. In can be invoked via keyboard shortcut: `cmd + shift + p`
+
+{:.figure}
+![Command Palette](/images/manual/sb3-commandPal.png)
+Press `cmd + shift + p` to bring up the Command Palette
+
+The command palette uses *fuzzy search* which means you can start typing a part of a command and the list of available commands will be filtered down to include only those with the partially typed word. E.g. you can start typing 'syntax' to bring up all the commands related to syntax highlighting. Type 'install' to use the Package Controll Install command.
+
+{:.figure}
+![Install Package](/images/manual/sb3-installPack.png)
+Type 'install' and select Package Control: Install Package
 
 Some useful plugins have already been installed.
 
@@ -100,7 +110,8 @@ In addition, the following preferences have also been set. Feel free to customiz
 
 We use [Git](http://git-scm.com/) as our SCM of choice and the latest version has been installed on your workstation. In addition, [Gitx](http://gitx.frim.nl/) has also been installed and provides a nice GUI for reviewing your changes prior to committing and viewing version history.
 
-(attach screenshots here)
+{:.figure}
+![Gitx](/images/manual/gitx-commitEx.png)
 
 #### Homebrew, Homebrew Cask
 
@@ -188,17 +199,17 @@ Trello is an organization tool that provides virtual [Kanban](http://en.wikipedi
 
 *   *   *
 
-## Git
+# Git
 
 This section will outline the fundamentals of using Git, including 1) configuration 2) basic usage 3) project workflow.
 
-### Configuration
+## Configuration
 
 Before you can begin using Git, you'll need to configure some basic properties, mainly your username and your email. These will be used to identify your commits. In addition, you'll also configure an authentication mechanism.
 
 To configure these settings, you'll need to open up your terminal.
 
-#### Username
+### Username
 
 First you need to tell git your name, so that it can properly label the commits you make.
 
@@ -207,7 +218,7 @@ $ git config --global user.name "Your Name Here"
 # Sets the default name for git to use when you commit
 {% endhighlight %}
 
-#### Email
+### Email
 
 Git saves your email address into the commits you make. Sites like Github use this information to associate your commits with your Github account. Your email address should be the same one associated with your Github/Bitbucket account.
 
@@ -216,7 +227,7 @@ $ git config --global user.email "your_email@example.com"
 # Sets the default email for git to use when you commit
 {% endhighlight %}
 
-#### HTTPS Authentication
+### HTTPS Authentication
 
 Git supports both HTTPS and SSH. Which you use is up to you although Github/Bitbucket recommend HTTPS. This section describes working with HTTPS repos, please see the [SSH Authentication](#ssh-authentication) section on working with SSH repos.
 
@@ -235,11 +246,11 @@ $ git config --global credential.helper 'cache --timeout=3600'
 # Set the cache to timeout after 1 hour (setting is in seconds)
 {% endhighlight %}
 
-#### SSH Authentication
+### SSH Authentication
 
 When you clone a repo using SSH, your SSH keys are used for authentication. The following describes how to generate an SSH key pair and add it to Github and Bitbucket.
 
-##### Generating SSH Keys
+#### Generating SSH Keys
 
 To generate a new SSH key, copy and paste the text below, making sure to substitute in your email. The default settings are preferred, so when you're asked to "enter a file in which to save the key,"" just press enter to continue.
 
@@ -272,17 +283,17 @@ To prevent entering your passphrase over and over again, add your new key to the
 $ ssh-add id_rsa
 {% endhighlight %}
 
-##### Adding your SSH key to Github and Bitbucket
+#### Adding your SSH key to Github and Bitbucket
 
 The [following guide](https://help.github.com/articles/generating-ssh-keys#step-3-add-your-ssh-key-to-github) provides clear instructions how to add your SSH key to Github. Similarly, [this guide](https://confluence.atlassian.com/pages/viewpage.action?pageId=270827678#SetupSSHforGitandMercurialonMacOSX/Linux-Step6.InstallthepublickeyonyourBitbucketaccount) has instructions on adding your SSH key to Bitbucket.
 
 That's all there is to it. You are now ready to clone both HTTPS and SSH repos on both Github and Bitbucket.
 
-### Basic Usage
+## Basic Usage
 
 This section describes the basics of using Git. You'll learn how to initialize an empty Git reposity, track files, create and undo commits, branch and merge, work with remotes, and git specific concepts like rebasing. Let's get started.
 
-#### Initializing a Git repository
+### Initializing a Git repository
 
 Start by creating a new folder anywhere on you filesystem. In these examples we're using the Destkop.
 
@@ -322,7 +333,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 The `git status` command provides information about the current state of our repository. It tells us that we're on the `master` branch (more on this later) and it tells us that we have some untracked files (the README.txt file that we created in the previous step).
 
-#### Adding files to repository
+### Adding files to repository
 
 When you create new files within a Git repository, they are untracked by default. You need to tell Git to track the files you want. As you may have guessed from the output of `git status`, tracking of files is done via the `git add` command. Let's track the README.txt file we created earlier and check the output of `git status` again.
 
@@ -344,7 +355,7 @@ Git is now tracking our README.txt file. From the output of `git status`, we can
 
 > If we had multiple files to add, it would be tedious to call `git add` on every file. In these situations, you can use `git add .` to add all untracked files.
 
-#### Committing state
+### Committing state
 
 We're satisfied with the current state of our project so let's go ahead and commit our changes. You can think of commits as _snapshots_ of your project during a point in time.
 
@@ -365,7 +376,7 @@ nothing to commit, working directory clean
 
 The output is fairly self-explanitory. We have nothing to commit (we just committed our changes) and our working directory is clean (we don't have any conflicts or untracked files).
 
-#### Modifying files
+### Modifying files
 
 Let's make some more changes to our `README.txt` file. Awesome projects always include license info so let's add that next. Open `README.txt` in your favourite editor and change its contents as follows:
 
@@ -400,7 +411,7 @@ $ git commit -m "Updated README with license information"
 >
 > To give a practical example, suppose you went on a caffeine-fueled hacking frenzy and implemented several features and fixed numerous bugs without saving state in-between. Without a staging area, you'd most likely be forced to create a giant commit that encompasses all these features and bug fixes - not ideal as it makes reverting difficult. Having a staging area allows you to 'cherry-pick' and 'stage' the changes you want (even from a single file) before packaging it up in a commit. This allows you to create small succinct commits.
 
-#### Ignoring files
+### Ignoring files
 
 Next, we'll want to create a small text file to keep track of any minor _todos_ we need to perform as we're developing a specific feature. Go ahead and create the file.
 
@@ -467,7 +478,7 @@ nothing to commit, working directory clean
 >
 > When working with frameworks like Ruby on Rails or .NET, you can find sample `.gitignore` files online that list commonly ignored components.
 
-#### Undoing commits
+### Undoing commits
 
 If you would like to revert a commit, Git provides several options that vary in how they modify the working copy. Each option is useful depending on your scenario. To illustrate the options, let's create a new file called `test.txt` and add some content.
 
@@ -486,7 +497,7 @@ $ git commit -m "Adds text.txt for testing"
  create mode 100644 test.txt
 {% endhighlight %}
 
-##### Normal revert
+#### Normal revert
 
 If we forgot to add something to the commit or forgot to include a modification, we can use the `git reset` command to do a normal revert.
 
@@ -505,7 +516,7 @@ As we can see, a normal revert will return the working copy to the state it was 
 
 Add and commit the file again before continueing.
 
-##### Soft revert
+#### Soft revert
 
 If we made a spelling mistake in our commit message or want to modify it slightly while leaving all committed changes in the staging area, we can use `git reset` with the `--soft` option.
 
@@ -529,7 +540,7 @@ $ git reset HEAD test.txt
 $ rm test.txt
 {% endhighlight %}
 
-##### Hard revert
+#### Hard revert
 
 If we completely messed up a previous commit and want to return our working copy to a prestine state, we can use the `git reset` with the `--hard` option.
 
@@ -566,7 +577,7 @@ As you can see, using the `--hard` option will not only revert the commit, but w
 
 > In the examples above, all `git reset` commands were called with `HEAD~1`. The number following the `~` (tilde) indicates the number of commits to undo.
 
-#### Branching and Merging
+### Branching and Merging
 
 Gits real power lies in branching and merging. Branching allows you to diverge your code from the main line of development and continue to do work without messing with the main line. Similarly, merging allows to merge a divergent branch back into the main line of development.
 
@@ -590,7 +601,7 @@ nothing to commit, working directory clean
 
 As you can see, all git repositories start with a main branch called the _master_ branch. Typically this branch will be the main line of development with branches diverging from and merging to this branch.
 
-#### Branching
+### Branching
 
 Let's introduce two new git commands. The first, `git branch` will list all branches in the repository. The second `git checkout` will allow to switch between branches as well as create new branches.
 
@@ -665,7 +676,7 @@ $ git log --graph --decorate --oneline
 
 As you can see, the changes we made in the `awesome-new-feature` branch did not affect the master branch. If you open the `README.txt` file in your editor, you'll notice that the changes we added are not there.
 
-#### Merging
+### Merging
 
 We're satisfied with our awesome new feature and we now want to merge the commits in our `awesome-new-feature` branch back into the `master` branch. This is done via the `git merge` command.
 
@@ -696,11 +707,11 @@ $ git branch -d awesome-new-feature
 Deleted branch awesome-new-feature (was 45c63f5).
 {% endhighlight %}
 
-#### Working with Remotes
+### Working with Remotes
 
 The Git repository that we've setup and have been using to date is only local to our machine. While this is one of the benefits of a distributed version control system, at some point you'll want to share your code and collaborate with other developers. To do this, we'll need to setup a remote. A remote is basically a git repo running on a git server somewhere and accessible to all developers on the project. This Git server can be self-hosted or provided via a git-hosting service like Github or Bitbucket. We'll use Github for this guide.
 
-##### Creating the remote repo
+#### Creating the remote repo
 
 Login to Github and create a new repository. Name the repository as `my-awesome-project`, add a short description, make the repository _Public_ and make sure that the option _Initialize this repository with a README_ is unchecked. Click the _Create repository_ button.
 
@@ -728,7 +739,7 @@ If you now refresh the Github project page, you'll notice that our files and cha
 
 > In the above example, we called `git push` with the `-u` option. This tells Git to associate the remote branch `master` with our local branch `master`. We'll see shortly how this information is used.
 
-##### Synchronization
+#### Synchronization
 
 Open the `README.txt` file in your editor and make some change (whatever you want). Next, we'll commit this change as we've done previously.
 
@@ -818,11 +829,15 @@ $ git log --graph --decorate --oneline
 * 4634299 Initial Commit
 {% endhighlight %}
 
-#### Cloning Repositories
+### Cloning Repositories
 
 There are two main approaches for getting a Git project - initializing a Git repository within an existing directory or cloning an existing repository. We've already seen how to do the first one so let's take a look at how we clone an existing repository.
 
-To clone, the first thing you'll need is the _clone url_ of the repository. Go to the Github project page for this Employee Guide ([https://github.com/fmitech/platypus-node](https://github.com/fmitech/platypus-node)). In the right-hand navigation control, you'll see _HTTPS clone URL_ (or _SSH clone URL_). If you previously setup HTTPS Authentication, make sure you use the _HTTPS clone URL_. If you previously setup SSH Authentication, make sure you use the _SSH clone URL_. If you setup both, you can use either one. Copy the URL into your clipboard (or click the little button next to the URL).
+To clone, the first thing you'll need is the _clone url_ of the repository. Go to the Github project page for this Employee Guide ([https://github.com/fmitech/employee-manual/tree/gh-pages](https://github.com/fmitech/employee-manual/tree/gh-pages)). In the right-hand navigation control, you'll see _HTTPS clone URL_ (or _SSH clone URL_). If you previously setup HTTPS Authentication, make sure you use the _HTTPS clone URL_. If you previously setup SSH Authentication, make sure you use the _SSH clone URL_. If you setup both, you can use either one. Copy the URL into your clipboard (or click the little button next to the URL).
+
+{:.figure}
+![Github Clone URL](/images/manual/github-cloneUrl.png)
+Click the links to select the appropriate URL based on your previously chosen authentication option (SSH or HTTPS)
 
 Open the Terminal and navigate to your your `Development` directory
 
@@ -833,42 +848,110 @@ $ cd ~/Development
 To clone the repository, we'll use the `git clone` command
 
 {% highlight bash %}
-$ git clone https://github.com/fmitech/platypus-node.git
-Cloning into 'platypus-node'...
-remote: Reusing existing pack: 149, done.
-remote: Total 149 (delta 0), reused 0 (delta 0)
-Receiving objects: 100% (149/149), 24.74 KiB | 0 bytes/s, done.
-Resolving deltas: 100% (77/77), done.
+$ git clone https://github.com/fmitech/employee-manual.git
+Cloning into 'employee-manual'...
+remote: Counting objects: 56, done.
+remote: Compressing objects: 100% (39/39), done.
+remote: Total 56 (delta 20), reused 34 (delta 6)
+Unpacking objects: 100% (56/56), done.
 Checking connectivity... done
 {% endhighlight %}
 
-> If you're using HTTPS Authentication, you'll be asked to provide your Github username and password in the above step. If you're using SSH Authentication, you shouldn't be prompted provided you used the _SSH clone URL_.
+> If you're using HTTPS Authentication, you might be asked to provide your Github username and password in the above step. If you're using SSH Authentication, you shouldn't be prompted provided you used the _SSH clone URL_.
 
-That's it, you have now successfully cloned an existing Git repository. Go into the directory and do a `git status` if you'd like to confirm. Otherwise, open the project within your text editor and start contributing!
+That's it, you have now successfully cloned an existing Git repository. Go into the directory and do a `git status` if you'd like to confirm.
 
-##### A note about cloning and branches
+{% highlight bash %}
+$ cd employee-manual/
 
-When you clone an existing repository, by default, only the master branch will be checked out even though the project may have several other branches. For example, the Employee Guide has both a `master` and a `development` branch. To see all branches (local and remote) we can use the `git branch` command with the `-a` option
+$ git status
+# On branch master
+nothing to commit, working directory clean
+{% endhighlight %}
+
+#### A note about cloning and branches
+
+When you clone an existing repository, by default, only the master branch will be checked out even though the project may have several other branches. For example, the Employee Guide has both a `master` and a `gh-pages` branch. The `gh-pages` is the branch that actually contains this guide. The `master` branch just holds the support assets. To see all branches (local and remote) we can use the `git branch` command with the `-a` option
 
 {% highlight bash %}
 $ git branch -a
-output
+* [1] master
+  [2] remotes/origin/HEAD -> origin/master
+  [3] remotes/origin/gh-pages
+  [4] remotes/origin/master
 {% endhighlight %}
 
-To actually checkout the `development` branch and have it track the remote `development` branch, we can again use the `git checkout` command with the `-b` option (like we used when creating branches) but this time also provide a second argument, the name of the remote branch
+To actually checkout the `gh-pages` branch and have it track the remote `gh-pages` branch, we can again use the `git checkout` command with the `-b` option (like we used when creating branches) but this time also provide a second argument, the name of the remote branch
 
 {% highlight bash %}
-$ git checkout -b development origin/development
-output
+$ git checkout -b gh-pages origin/gh-pages
+Branch gh-pages set up to track remote branch gh-pages from origin.
+Switched to a new branch 'gh-pages'
 {% endhighlight %}
 
-You are now tracking both the `master` and `development` branches.
+You are now tracking both the `master` and `gh-pages` branches. You can switch between branches like shown previously, using the `git checkout` command.
+
+{% highlight bash %}
+$ git checkout master
+Switched to branch 'master'
+
+$ git checkout gh-pages
+Switched to branch 'gh-pages'
+{% endhighlight %}
 
 
-### Git Workflow
+## Git Workflow
 
-Now that you have a basic understanding of how to use Git, we'll move onto workflows. A Git workflow establishes a set of practices on how to use Git in day to day development. While there is no _"the one"_ workflow (indeed it really depends on the project), we've had great success using the flow introduced by Vincent Driessen. Read through it [here](http://nvie.com/posts/a-successful-git-branching-model/?). It is important that you understand the workflow as you'll be using it daily when developing.
+Now that you have a basic understanding of how to use Git, we'll move onto workflows. A Git workflow establishes a set of practices on how to use Git in day to day development. While there is no _"the one"_ workflow (indeed it really depends on the project), we've had great success using the [Github Flow](http://scottchacon.com/2011/08/31/github-flow.html). Read and understand the article as this will be a part of your everday development.
 
-### A note about GUI Git
+### Contributing to this manual
+
+There's no better way to learn Git and the workflow than to actually go through and use it. A perfect place to start is by contributing to this manual (fixing typos and errors, adding supplementary information and topics, etc. are all things that will increase the benefits of this manual). Here's how to get started.
+
+#### Clone the employee-manual repository
+
+You should already have the repository cloned on your machine if you've been following the this manual. Check [here](#cloning-repositories) for reference.
+
+#### Checkout `gh-pages` and make sure you're up-to-date
+
+As mentioned previously, the manual you're reading is contained in the `gh-pages` branch of the employee-manual repository. Checkout this branch and pull the latest changes from the server to ensure you're working with the most up-to-date version.
+
+{% highlight bash %}
+$ git checkout gh-pages
+Switched to branch 'gh-pages'
+
+$ git pull
+Already up-to-date.
+{% endhighlight %}
+
+#### Create a descriptive branch off of `gh-pages`
+
+Regardles of whether you're just fixing a typo or adding some supplementary information, always create a branch off of the main line of development, in this case the `gh-pages` branch
+
+{% highlight bash %}
+$ git checkout -b expanded-rvm-section
+Switched to a new branch 'expanded-rvm-section'
+{% endhighlight %}
+
+#### Make changes
+
+Github pages uses [Jekyll](http://jekyllrb.com/) which makes making changes to this guide super easy. The entire manual is in a single file `index.md` in the root of the project. The file is written in a derivative of Markdown called [Kramdown](http://kramdown.gettalong.org/syntax.html#kramdown-syntax) but don't worry, it's very simple and easy to learn. Open the file in a text editor and make the necessary changes.
+
+#### Commit locally then push to remote
+
+Commit your changes to your local branch and push to a named branch as often as required.
+
+{% highlight bash %}
+$ git commit -m "Added information on creating Gemsets"
+$ git push origin expanded-rvm-section
+{% endhighlight %}
+
+#### Make a pull request when ready
+
+Once you're done with your changes and would like to merge back into the `gh-pages` branch, simply create a [pull request](https://help.github.com/articles/using-pull-requests#shared-repository-model).
+
+That's it! Thanks for contributing.
+
+## A note about GUI Git
 
 While there are numerous GUI clients available for Git, none of them come close to the power you get from using the command line. However, there is one GUI tool that greatly simplifies one aspect of working with Git - staging and committing files. In our examples above, we used the `git add` command to stage files followed by the `git commit -m` command to actually commit them. Instead, we can use [GitX](http://gitx.frim.nl/). The tool is already installed on your workstation and can be invoked via the `gitx` command from within your working copy.
