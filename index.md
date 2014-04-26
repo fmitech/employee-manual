@@ -956,6 +956,8 @@ That's it! Thanks for contributing.
 
 While there are numerous GUI clients available for Git, none of them come close to the power you get from using the command line. However, there is one GUI tool that greatly simplifies one aspect of working with Git - reviewing, staging and committing files. In our examples above, we used the `git add` command to stage files followed by the `git commit -m` command to actually commit them. Instead, we can use [GitX](http://gitx.frim.nl/). The tool is already installed on your workstation and can be invoked via the `gitx` command from within your working copy.
 
+> Under Linux running Gnome (e.g. Ubuntu) you can use a port of GitX called [Git](https://github.com/jessevdk/gitg). The tool can be invoked via the `gitg` command
+
 When making a commit, bring up GitX via the `gitx` command. The GitX GUI is composed of two main views, the *History View* and the *Commit View* - both pretty self explanitory. To review and commit your changes, switch to the Commit View.
 
 {:.figure}
