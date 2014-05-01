@@ -34,7 +34,7 @@ Sublime Text's command palette provides quick access to various functions. In ca
 ![Command Palette](./images/manual/sb3-commandPal.png)
 Press `cmd + shift + p` to bring up the Command Palette
 
-The command palette uses *fuzzy search* which means you can start typing a part of a command and the list of available commands will be filtered down to include only those with the partially typed word. E.g. you can start typing 'syntax' to bring up all the commands related to syntax highlighting. Type 'install' to use the Package Controll Install command.
+The command palette uses *fuzzy search* which means you can start typing a part of a command and the list of available commands will be filtered down to include only those with the partially typed word. E.g. you can start typing 'syntax' to bring up all the commands related to syntax highlighting. Type 'install' to use the Package Control Install command.
 
 {:.figure}
 ![Install Package](./images/manual/sb3-installPack.png)
@@ -231,7 +231,7 @@ $ git config --global user.email "your_email@example.com"
 
 Git supports both HTTPS and SSH. Which you use is up to you although Github/Bitbucket recommend HTTPS. This section describes working with HTTPS repos, please see the [SSH Authentication](#ssh-authentication) section on working with SSH repos.
 
-When you clone a HTTPS repo, you'll be asked to provide your username and password. If you don't want to keep typing your username and password everytime you talk with the remote server, you'll need to configure your _credential.helper_.
+When you clone a HTTPS repo, you'll be asked to provide your username and password. If you don't want to keep typing your username and password every time you talk with the remote server, you'll need to configure your _credential.helper_.
 
 This should already be configured on your system as Git was installed via Homebrew. As a sanity check, verify that your credential.helper is properly set
 
@@ -261,7 +261,7 @@ $ ssh-keygen -t rsa -C "your_email@example.com"
 # Enter file in which to save the key (/Users/you/.ssh/id_rsa): [Press enter]
 {% endhighlight %}
 
-Next, you'll be asked to enter a passphrase. Please don't leave these blank, enter an actuall passphrase.
+Next, you'll be asked to enter a passphrase. Please don't leave these blank, enter an actual passphrase.
 
 {% highlight bash %}
 Enter passphrase (empty for no passphrase): [Type a passphrase]
@@ -302,7 +302,7 @@ $ cd ~/Desktop
 $ mkdir my-awesome-project && cd my-awesome-project
 {% endhighlight %}
 
-Within the newly created folder, create a `README.txt` file (afterall, all awesome projects contain a README). Using an editor, add some content to the README file.
+Within the newly created folder, create a `README.txt` file (after all, all awesome projects contain a README). Using an editor, add some content to the README file.
 
 {% highlight bash %}
 $ touch README.txt
@@ -468,7 +468,7 @@ $ git commit -m "Adds .gitignore to project"
 [master 3083bd3] Adds .gitignore to project
  1 file changed, 1 insertion(+)
  create mode 100644 .gitignore
- 
+
 $ git status
 # On branch master
 nothing to commit, working directory clean
@@ -542,7 +542,7 @@ $ rm test.txt
 
 #### Hard revert
 
-If we completely messed up a previous commit and want to return our working copy to a prestine state, we can use the `git reset` with the `--hard` option.
+If we completely messed up a previous commit and want to return our working copy to a pristine state, we can use the `git reset` with the `--hard` option.
 
 To illustrate this, modify the README file
 
@@ -573,23 +573,23 @@ $ git status
 nothing to commit, working directory clean
 {% endhighlight %}
 
-As you can see, using the `--hard` option will not only revert the commit, but will also discard any changes made in that commit from the working copy, essentialy restoring it to the state of a previous commit.
+As you can see, using the `--hard` option will not only revert the commit, but will also discard any changes made in that commit from the working copy, essentially restoring it to the state of a previous commit.
 
 > In the examples above, all `git reset` commands were called with `HEAD~1`. The number following the `~` (tilde) indicates the number of commits to undo.
 
 ### Branching and Merging
 
-Gits real power lies in branching and merging. Branching allows you to diverge your code from the main line of development and continue to do work without messing with the main line. Similarly, merging allows to merge a divergent branch back into the main line of development.
+Git's real power lies in branching and merging. Branching allows you to diverge your code from the main line of development and continue to do work without messing with the main line. Similarly, merging allows to merge a divergent branch back into the main line of development.
 
 > #### Why bother?
 >
-> Why not just modify and commit to the main line of development? While this process works fine for small projects with only one or two developers, it quickly breaks down as project complexity increases or more people are added to the project. 
+> Why not just modify and commit to the main line of development? While this process works fine for small projects with only one or two developers, it quickly breaks down as project complexity increases or more people are added to the project.
 >
 > Here's a practical example. Let's assume that we have a web application that is already running in production and is being contributed to by several developers. One of these developers has been asked to implement an experimental feature that may or may not ship in a future version of the application. The commits for this experimental feature are all in the main line of development. Now let's assume that a critical bug has been discovered in production and another developer needs to quickly add a patch to fix the bug. Since all commits for this project are on the main line (including commits from an un-tested and partially implemented experimental feature) the developers now have a major problem. It will be difficult to commit the patch and deploy the fix without also exposing un-tested code to production.
 >
-> This is where branching comes in. The developer working on the experimental feature could have created a seperate branch to house all their commits, leaving the main line of development unaffected. When the critical bug is discovered, the other developer can quickly patch the main line of development without also introducing unwanted commits to production. Once the experimental feature is complete and tested, the feature can be merged back into the main line for inclusion in a future release.
+> This is where branching comes in. The developer working on the experimental feature could have created a separate branch to house all their commits, leaving the main line of development unaffected. When the critical bug is discovered, the other developer can quickly patch the main line of development without also introducing unwanted commits to production. Once the experimental feature is complete and tested, the feature can be merged back into the main line for inclusion in a future release.
 
-We'll see later how we can use Git's awesome branching and merging functionality to develop an ideal worflow for most projects. For now, let's just concentrate on the basics.
+We'll see later how we can use Git's awesome branching and merging functionality to develop an ideal workflow for most projects. For now, let's just concentrate on the basics.
 
 We've already seen one example of a branch. Recall the output of `git status` within our project directory.
 
@@ -642,20 +642,20 @@ Released under the MIT License.
 As we've done previously, let's commit this changeset.
 
 {% highlight bash %}
-$ git add README.txt 
+$ git add README.txt
 $ git commit -m "Adds documentation about awesome new feature"
 [awesome-new-feature 45c63f5] Adds documentation about awesome new feature
  1 file changed, 4 insertions(+)
 {% endhighlight %}
 
-The output of the commit command will show you the branch along with the commit number (in our case, we've just commited to the `awesome-new-feature` branch and our commit number is `45c63f5`)
+The output of the commit command will show you the branch along with the commit number (in our case, we've just committed to the `awesome-new-feature` branch and our commit number is `45c63f5`)
 
 > Unlike centralized version control systems which use revision numbers, Git uses hashes to uniquely identify commits.
 
 Let's confirm that the changes we just made did not in fact affect the master branch. We can use the `git log` command to view recent commits.
 
 {% highlight bash %}
-$ git log --graph --decorate --oneline 
+$ git log --graph --decorate --oneline
 * 45c63f5 (HEAD, awesome-new-feature) Adds documentation about awesome new feature
 * 3083bd3 (master) Adds .gitignore to project
 * 6d443f3 Updated README with license information
@@ -698,7 +698,7 @@ $ git log --graph --decorate --oneline
 * 4634299 Initial Commit
 {% endhighlight %}
 
-The output shows that our working copy (`HEAD`), the master branch, and the awesome-new-feature branch are all pointing to the same last commit, meaning our changes have been successfully merged back into our master branch. If you inspect the `README.txt` file now, you'll notice that it's been updated with the modificatios we made in the `awesome-new-feature` branch.
+The output shows that our working copy (`HEAD`), the master branch, and the awesome-new-feature branch are all pointing to the same last commit, meaning our changes have been successfully merged back into our master branch. If you inspect the `README.txt` file now, you'll notice that it's been updated with the modifications we made in the `awesome-new-feature` branch.
 
 Since we're done with the `awesome-new-feature` branch, let's go ahead and delete it. This is accomplished with the `git branch` command and the `-d` option.
 
@@ -902,7 +902,7 @@ Switched to branch 'gh-pages'
 
 ## Git Workflow
 
-Now that you have a basic understanding of how to use Git, we'll move onto workflows. A Git workflow establishes a set of practices on how to use Git in day to day development. While there is no _"the one"_ workflow (indeed it really depends on the project), we've had great success using the [Github Flow](http://scottchacon.com/2011/08/31/github-flow.html). Read and understand the article as this will be a part of your everday development.
+Now that you have a basic understanding of how to use Git, we'll move onto workflows. A Git workflow establishes a set of practices on how to use Git in day to day development. While there is no _"the one"_ workflow (indeed it really depends on the project), we've had great success using the [Github Flow](http://scottchacon.com/2011/08/31/github-flow.html). Read and understand the article as this will be a part of your everyday development.
 
 ### Contributing to this manual
 
@@ -926,7 +926,7 @@ Already up-to-date.
 
 #### Create a descriptive branch off of `gh-pages`
 
-Regardles of whether you're just fixing a typo or adding some supplementary information, always create a branch off of the main line of development, in this case the `gh-pages` branch
+Regardless of whether you're just fixing a typo or adding some supplementary information, always create a branch off of the main line of development, in this case the `gh-pages` branch
 
 {% highlight bash %}
 $ git checkout -b expanded-rvm-section
@@ -942,7 +942,7 @@ Github pages uses [Jekyll](http://jekyllrb.com/) which makes making changes to t
 Commit your changes to your local branch and push to a named branch as often as required.
 
 {% highlight bash %}
-$ git commit -m "Added information on creating Gemsets"
+$ git commit -m "Add information on creating Gemsets"
 $ git push origin expanded-rvm-section
 {% endhighlight %}
 
@@ -958,7 +958,7 @@ While there are numerous GUI clients available for Git, none of them come close 
 
 > Under Linux running Gnome (e.g. Ubuntu) you can use a port of GitX called [Git](https://github.com/jessevdk/gitg). The tool can be invoked via the `gitg` command
 
-When making a commit, bring up GitX via the `gitx` command. The GitX GUI is composed of two main views, the *History View* and the *Commit View* - both pretty self explanitory. To review and commit your changes, switch to the Commit View.
+When making a commit, bring up GitX via the `gitx` command. The GitX GUI is composed of two main views, the *History View* and the *Commit View* - both pretty self explanatory. To review and commit your changes, switch to the Commit View.
 
 {:.figure}
 ![Gitx History View](./images/manual/gitx-histView.png)
@@ -970,7 +970,7 @@ The Commit View shows unstaged files in the bottom left-hand corner. Selecting a
 ![Gitx Commit View](./images/manual/gitx-commitView.png)
 The commit view allows you to stage/discard either all or partial changes made to a file
 
-To stage (add) files, simply right-click the file (or select multiple and right-click) and select *'Stage changes'*. The staged changes will now show in the bottom right hand corner of the screen. The last thing to do is to add a meaningfull commit message and click *'Commit'*
+To stage (add) files, simply right-click the file (or select multiple and right-click) and select *'Stage changes'*. The staged changes will now show in the bottom right hand corner of the screen. The last thing to do is to add a meaningful commit message and click *'Commit'*
 
 {:.figure}
 ![Gitx Commit View](./images/manual/gitx-stagedChanges.png)
