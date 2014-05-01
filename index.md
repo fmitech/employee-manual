@@ -975,3 +975,132 @@ To stage (add) files, simply right-click the file (or select multiple and right-
 {:.figure}
 ![Gitx Commit View](./images/manual/gitx-stagedChanges.png)
 Once you have staged your changes, enter a meaningful commit message
+
+*   *   *
+
+# Backbone on Rails
+
+This part of the manual will introduce you to (perhaps) your first Backbone on Rails application. It is by no means a comprehensive guide (in fact, it's less a guide than an exercise for you to complete) but *it* will give you some working experience with Rails before jumping onto real projects.
+
+Your task will be to build a contacts manager application. The application is ultimately simple in functionality but it will introduce most of the working parts you'll encounter in every Rails/Backbone application.
+
+The application will allow authenticated users the ability to list, add, edit, and remove their contacts. Lets' get started.
+
+## Setup & Configuration
+
+The latest versions of Ruby is already installed on your system, that is Ruby 2.1.1 as of this writing. Before we create our application, we'll switch RVM to Ruby 2.1.1 and create a [gemset](https://rvm.io/gemsets/basics). A gemset is a great way to isolate gem dependencies between projects so it's a common pattern to have a gemset per project.
+
+{% highlight bash %}
+$ rvm use 2.1.1
+Using /Users/bjedrocha/.rvm/gems/ruby-2.1.1
+
+$ rvm gemset create contacts-manager
+ruby-2.1.1 - #gemset created /Users/bjedrocha/.rvm/gems/ruby-2.1.1@contacts-manager
+ruby-2.1.1 - #generating contacts-manager wrappers.........
+
+$ rvm gemset use contacts-manager
+Using ruby-2.1.1 with gemset contacts-manager
+{% endhighlight %}
+
+In order to create a new Rails application, we'll need the Rails gem itself. We can install it via the `gem install` command. Without specifying a version, the latest version of Rails will be installed (4.1.0 as of this writing).
+
+{% highlight bash %}
+$ gem install rails --no-ri --no-rdoc
+{% endhighlight %}
+
+The Rails gem has several dependencies so the installation may take some time. Once the installation is complete, we're ready to create our application.
+
+Rails comes with a number of scripts called generators that are designed to make your development life easier by creating everything that's necessary to start working on a particular task. One of these is the new application generator, which will provide you with the foundation of a fresh Rails application so that you don't have to write it yourself.
+
+To use this generator, open a terminal, navigate to your `~/Development` directory and type
+
+{% highlight bash %}
+$ rails new contacts-manager --skip-test-unit
+{% endhighlight %}
+
+This will create a Rails application called Contacts Manager in a `contacts-manager` directory and install the gem dependencies that are already mentioned in Gemfile using bundle install.
+
+> The `--skip-test-unit` option tells the generator to no create the files associated with unit tests. For the purposes of this manual, we're not going to worry about unit tests.
+>
+> You can see all of the command line options that the Rails application builder accepts by running `rails new -h`.
+
+After you create the contacts manager application, switch its folder
+
+{% highlight bash %}
+$ cd contacts-manager
+{% endhighlight %}
+
+The `contacts-manager` directory has a number of auto-generated files and folders that make up the structure of a Rails application. Most of the work in this guide will happen in the `app` folder, but here's a basic rundown on the function of each of the files and folders that Rails created by default:
+
+| File/Folder | Purpose |
+| ----------- | ------- |
+| /app | Contains the controllers, models, views, helpers, mailers and assets for your application. |
+| /bin | Contains the rails script that starts your app and can contain other scripts you use to deploy or run your application. |
+| /config | Configure your application's routes, database, and more. |
+| config.ru | Rack configuration for Rack based servers used to start the application. |
+| /db | Contains your current database schema, as well as the database migrations. |
+| Gemfile / Gemfile.lock | These files allow you to specify what gem dependencies are needed for your Rails application. These files are used by the Bundler gem. |
+| /lib | Extended modules for your application. |
+| /log | Application log files. |
+| /public | The only folder seen by the world as-is. Contains static files and compiled assets. |
+| Rakefile | This file locates and loads tasks that can be run from the command line. The task definitions are defined throughout the components of Rails. Rather than changing Rakefile, you should add your own tasks by adding files to the lib/tasks directory of your application. |
+| README.rdoc | This is a brief instruction manual for your application. You should edit this file to tell others what your application does, how to set it up, and so on. |
+| /tmp | Temporary files (like cache, pid, and session files). |
+| /vendor | A place for all third-party code. In a typical Rails application this includes vendored gems. |
+
+Rails favours convention over configuration so the purpose of each of those folders will become more and more apparent to more your work with Rails.
+
+Rails give you a functional application from the start. You can start it up by going to the `contacts-manager` directory created by the application and running:
+
+{% highlight bash %}
+$ rails server
+=> Booting WEBrick
+=> Rails 4.1.0 application starting in development on http://0.0.0.0:3000
+=> Run `rails server -h` for more startup options
+=> Notice: server is listening on all interfaces (0.0.0.0). Consider using 127.0.0.1 (--binding option)
+=> Ctrl-C to shutdown server
+[2014-04-27 18:18:21] INFO  WEBrick 1.3.1
+[2014-04-27 18:18:21] INFO  ruby 2.1.1 (2014-02-24) [x86_64-darwin12.0]
+[2014-04-27 18:18:21] INFO  WEBrick::HTTPServer#start: pid=31204 port=3000
+{% endhighlight %}
+
+The `rails server` command start *WEBrick*, a web server distributed with Ruby by default. To see your application in action, open a browser window and navigate to [http://localhost:3000](http://localhost:3000).
+
+Awesome! We have a fully functional Rails application ready to bend to our will. Before we continue, let's take care of a couple of house-keeping items.
+
+### Housekeeping
+
+Recall that at the beginning of this section we created a new gemset that would serve to isolate the gems installed and used by this project. Indeed, unless you deviated from this guide, the Rails gem and all its dependencies will be currently installed under the `contacts-manager` gemset. However, if you were to end your terminal session (i.e. by closing the terminal), you're currently selected gemset will most likely have changed. Give this a try - close the terminal (`cmd + q`) and re-open. Navigate back into the `contacts-manager` directory and type
+
+{% highlight bash %}
+$ rvm gemset list
+gemsets for ruby-2.1.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.1.1)
+=> (default)
+   contacts-manager
+   global
+{% endhighlight %}
+
+What gives? We previously created a new gemset and told rvm to use it via the `rvm gemset use` command, how come it's no longer selected?. Well, rvm has the concept of a default ruby and a default gemset. During a terminal session, you can switch between ruby versions and gemsets to your heart's content but as soon as you end the session, RVM will go back to the default.
+
+While we could just switch back to the `contacts-manager` gemset, doing this everytime will become combersome. RVM provides a way to automatically switch into a particular ruby version and gemset as soon as you switch into a directory. In terminal, within the `contacts-manager` directory, type the following:
+
+{% highlight bash %}
+$ touch .ruby-version
+$ echo "2.1.1" >> .ruby-version
+$ touch .ruby-gemset
+$ echo "contacts-manager" >> .ruby-gemset 
+{% endhighlight %}
+
+The above will create two files within your directory, `.ruby-version` and `.ruby-gemset`. These are special files that are used by RVM to automatically switch ruby version and gemset whenever you switch into that directory. To verify this working, quit the terminal once more, re-open and switch back into the `contacts-manager` directory, and then type the following
+
+{% highlight bash %}
+$ rvm gemset list
+gemsets for ruby-2.1.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.1.1)
+   (default)
+=> contacts-manager
+   global
+{% endhighlight %}
+
+Excellent, now whenever you switch into this directory, you'll be using the ruby version and gemset corresponding to this project.
+
+The other bit of housekeeping we'll need is source control. Go ahead and initialize a git repository for this project and make sure to push it up to Github.
