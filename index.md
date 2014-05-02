@@ -982,9 +982,7 @@ Once you have staged your changes, enter a meaningful commit message
 
 This part of the manual will introduce you to (perhaps) your first Backbone on Rails application. It is by no means a comprehensive guide (in fact, it's less a guide than an exercise for you to complete) but *it* will give you some working experience with Rails before jumping onto real projects.
 
-Your task will be to build a contacts manager application. The application is ultimately simple in functionality but it will introduce most of the working parts you'll encounter in every Rails/Backbone application.
-
-The application will allow authenticated users the ability to list, add, edit, and remove their contacts. Lets' get started.
+Your task will be to build a contacts manager application. The application is ultimately simple in functionality but it will introduce most of the working parts you'll encounter in every Rails/Backbone application. Let's get started.
 
 ## Setup & Configuration
 
@@ -1070,7 +1068,9 @@ Awesome! We have a fully functional Rails application ready to bend to our will.
 
 ### Housekeeping
 
-Recall that at the beginning of this section we created a new gemset that would serve to isolate the gems installed and used by this project. Indeed, unless you deviated from this guide, the Rails gem and all its dependencies will be currently installed under the `contacts-manager` gemset. However, if you were to end your terminal session (i.e. by closing the terminal), you're currently selected gemset will most likely have changed. Give this a try - close the terminal (`cmd + q`) and re-open. Navigate back into the `contacts-manager` directory and type
+#### Automated Ruby/Gemset switching
+
+Recall that at the beginning of this section we created a new gemset that would serve to isolate the gems installed and used by this project. Indeed, unless you deviated from this guide, the Rails gem and all its dependencies will be currently installed under the `contacts-manager` gemset. However, if you were to end your terminal session (i.e. by closing the terminal), your currently selected gemset will most likely have changed. Give this a try - close the terminal (`cmd + q`) and re-open. Navigate back into the `contacts-manager` directory and type
 
 {% highlight bash %}
 $ rvm gemset list
@@ -1103,4 +1103,12 @@ gemsets for ruby-2.1.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.1.1)
 
 Excellent, now whenever you switch into this directory, you'll be using the ruby version and gemset corresponding to this project.
 
-The other bit of housekeeping we'll need is source control. Go ahead and initialize a git repository for this project and make sure to push it up to Github.
+#### Version Control
+
+It's also a good idea to have this under version control. Go ahead and initialize a git repository for this project as shown earlier in the manual. You can keep this local or push this to Github (you can just create a public repo under your account)
+
+#### Disable Coffeescript
+
+Coffeescript is now the default in Rails, let's disable this. Load the contacts-manager application within your text editor and open the `Gemfile` file. Rails uses [Bundler](http://bundler.io/) to manage your application's gem dependencies and the `Gemfile` is where these dependencies are listed. Take a look through the file, there are very helpful comments that describe what each of the gems does. Find the line with `gem 'coffee-rails', '~> 4.0.0'` and comment it out (or remove it completely).
+
+With this little bit of housekeeping in place, we can go ahead and start coding.
