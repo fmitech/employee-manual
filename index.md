@@ -169,13 +169,9 @@ Self-explanitory. Once you have your email address and password, you can login t
 
 [Basecamp](https://basecamp.com/) is a project management tool and probably the most popular Ruby on Rails application running in production. We use Basecamp to manage projects, to correspond with clients, and to correspond with other team members. Once you have your login and password, you can login at [https://launchpad.37signals.com/basecamp](https://launchpad.37signals.com/basecamp).
 
-### Messages.app (provided)
+### Slack
 
-Throughout the day, we use the Messages app to communicate with other team members in and out of the office. The Messages app is already installed on your machine but you'll need to setup your account with the credentials provided.
-
-Open the Messages application, then select _Preferences_ (you can use `cmd + ,` as a shortcut). In the _Preferences_ dialog, click on _Accounts_ then click the _+_ icon to add your account. Select _Other messages account..._ and hit _Continue_. For _Account Type_ select _Jabber_, for _Account Name_ and _Password_ enter the login information you've been provided. Set the _Server_ to `optimus2.fluidmedia.com`, the _Port_ to `5223` and make sure _Use SSL_ is selected. Finally, click on _Create_.
-
-This will log you onto the chat server and you should see everyone in the organization.
+Throughout the day, we use the Slack app to communicate with other team members in and out of the office. The Slack app is already installed on your machine, but you'll need to create an account at [fmitech.slack.com/signup](https://fmitech.slack.com/signup).
 
 #### Chat Rooms
 
