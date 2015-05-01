@@ -171,7 +171,7 @@ Self-explanitory. Once you have your email address and password, you can login t
 
 ### Slack
 
-Throughout the day, we use the Slack app to communicate with other team members in and out of the office. The Slack app is already installed on your machine, but you'll need to create an account at [fmitech.slack.com/signp](https://fmitech.slack.com/signup).
+Throughout the day, we use the Slack app to communicate with other team members in and out of the office. The Slack app is already installed on your machine, but you'll need to create an account at [fmitech.slack.com/signup](https://fmitech.slack.com/signup).
 
 #### Chat Rooms
 
