@@ -272,7 +272,7 @@ Your identification has been saved in /Users/you/.ssh/id_rsa.
 To prevent entering your passphrase over and over again, add your new key to the ssh-agent.
 
 {% highlight bash %}
-$ ssh-add id_rsa
+$ ssh-add ~/.ssh/id_rsa
 {% endhighlight %}
 
 #### Adding your SSH key to Github and Bitbucket
@@ -1080,7 +1080,7 @@ While we could just switch back to the `contacts-manager` gemset, doing this eve
 $ touch .ruby-version
 $ echo "2.1.1" >> .ruby-version
 $ touch .ruby-gemset
-$ echo "contacts-manager" >> .ruby-gemset 
+$ echo "contacts-manager" >> .ruby-gemset
 {% endhighlight %}
 
 The above will create two files within your directory, `.ruby-version` and `.ruby-gemset`. These are special files that are used by RVM to automatically switch ruby version and gemset whenever you switch into that directory. To verify this working, quit the terminal once more, re-open and switch back into the `contacts-manager` directory, and then type the following
