@@ -171,11 +171,7 @@ Self-explanitory. Once you have your email address and password, you can login t
 
 ### Slack
 
-Throughout the day, we use the Slack app to communicate with other team members in and out of the office. The Slack app is already installed on your machine, but you'll need to create an account at [fmitech.slack.com/signup](https://fmitech.slack.com/signup).
-
-#### Chat Rooms
-
-Along with communicating with other team members directly, we also have chatroom setup for general discussions. To join, hit `cmd + r` on your keyboard. In the dialog, enter `devchat` for _Room Name_ and hit _Go_.
+Throughout the day, we use the Slack app to communicate with other team members in and out of the office. The Slack app is already installed on your machine, but you'll need to create an account at [fmitech.slack.com/signup](https://fmitech.slack.com/signup) using your Fluid Media email address.
 
 ### Github
 
