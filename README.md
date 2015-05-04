@@ -6,7 +6,7 @@ Give user's the ability to login and logout. Protect all routes from anonymous a
 
 ### Design
 
-The application needs to have a modern look and feel.
+The application needs to have a modern look and feel. You can use Bootstrap or other front-end CSS frameworks.
 
 ### Functionality
 
