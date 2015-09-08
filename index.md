@@ -287,7 +287,7 @@ This section describes the basics of using Git. You'll learn how to initialize a
 
 ### Initializing a Git repository
 
-Start by creating a new folder anywhere on you filesystem. In these examples we're using the Destkop.
+Start by creating a new folder anywhere on your filesystem. In these examples we're using the Destkop.
 
 {% highlight bash %}
 $ cd ~/Desktop
