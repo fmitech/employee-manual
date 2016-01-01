@@ -2,7 +2,7 @@
 
 Your task is to create a simple Ruby on Rails application for managing contacts - details below.
 
-![workflow](https://goo.gl/7i5fSL)
+[![workflow](https://docs.google.com/file/d/0Bx2U6jDtNdGPd3BUZWlkR1I5M1k/preview)](https://docs.google.com/file/d/0Bx2U6jDtNdGPd3BUZWlkR1I5M1k/edit)
 
 ## Requirements
 
