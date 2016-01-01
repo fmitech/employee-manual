@@ -137,13 +137,13 @@ $ rvm list
 Installing a version of ruby
 
 {% highlight bash %}
-$ rvm install ruby-2.1.0
+$ rvm install ruby-2.2.1
 {% endhighlight %}
 
 Using a version of ruby
 
 {% highlight bash %}
-$ rvm use ruby-2.1.0
+$ rvm use ruby-2.2.1
 {% endhighlight %}
 
 It is recommended that you read the [RVM Documentation](http://rvm.io/), in particular the sections about [upgrading](http://rvm.io/rvm/upgrading), [installing rubies](http://rvm.io/rubies/installing), [setting a default ruby](http://rvm.io/rubies/default), [gemsets](http://rvm.io/gemsets), and [best practices](http://rvm.io/rvm/best-practices).
@@ -154,7 +154,7 @@ It is recommended that you read the [RVM Documentation](http://rvm.io/), in part
 | Type | Installed | Notes |
 | ---- | --------- | ----- |
 | Browsers | Google Chrome, Firefox, Safari | |
-| Databases | MySQL, Postgres, SQLite, Redis | MySQL password: `password` |
+| Databases | MySQL, Postgres, SQLite, Redis | MySQL password: `lemonlime` |
 | Virtualization | VMWare Fusion, VirtualBox, Vagrant | |
 
 ## Accounts
@@ -180,10 +180,6 @@ Github is a hosted Git (discussed later) service provider and where we keep the 
 ### Bitbucket
 
 Bitbucket is another hosted source control service provider that offers both Git and Hg support (both of these will be discussed later). The bulk of our .NET projects is hosted on Bitbucket. The signup for Bitbucket is a little easier as it allows you to login via your Google or Github account. You can also create an account if you prefer by visiting [https://bitbucket.org](https://bitbucket.org). Once your account is created, we'll add you to the necessary organizations and repos.
-
-### Beanstalk (provided)
-
-Beanstalk is yet another hosted source control service provider although it only houses our older projects. Access is by invitation only so you'll receive an email with instructions on how to setup your account.
 
 ### Trello
 
@@ -970,29 +966,29 @@ Once you have staged your changes, enter a meaningful commit message
 
 *   *   *
 
-# Backbone on Rails
+# Ruby on Rails
 
-This part of the manual will introduce you to (perhaps) your first Backbone on Rails application. It is by no means a comprehensive guide (in fact, it's less a guide than an exercise for you to complete) but *it* will give you some working experience with Rails before jumping onto real projects.
+This part of the manual will introduce you to (perhaps) your first Ruby on Rails application. It is by no means a comprehensive guide (in fact, it's less a guide than an exercise for you to complete) but *it* will give you some working experience with Rails before jumping onto real projects.
 
-Your task will be to build a contacts manager application. The application is ultimately simple in functionality but it will introduce most of the working parts you'll encounter in every Rails/Backbone application. Let's get started.
+Your task will be to build a contacts manager application, the requirements for which will be introduced to you below. The application is ultimately simple in functionality but it will introduce most of the working parts you'll encounter in every Rails application. Let's get started.
 
 ## Setup & Configuration
 
-The latest versions of Ruby is already installed on your system, that is Ruby 2.1.1 as of this writing. Before we create our application, we'll switch RVM to Ruby 2.1.1 and create a [gemset](https://rvm.io/gemsets/basics). A gemset is a great way to isolate gem dependencies between projects so it's a common pattern to have a gemset per project.
+The latest versions of Ruby is already installed on your system, that is Ruby 2.2.1 as of this writing. Before we create our application, we'll switch RVM to Ruby 2.2.1 and create a [gemset](https://rvm.io/gemsets/basics). A gemset is a great way to isolate gem dependencies between projects so it's a common pattern to have a gemset per project.
 
 {% highlight bash %}
-$ rvm use 2.1.1
-Using /Users/bjedrocha/.rvm/gems/ruby-2.1.1
+$ rvm use 2.2.1
+Using /Users/bjedrocha/.rvm/gems/ruby-2.2.1
 
 $ rvm gemset create contacts-manager
-ruby-2.1.1 - #gemset created /Users/bjedrocha/.rvm/gems/ruby-2.1.1@contacts-manager
-ruby-2.1.1 - #generating contacts-manager wrappers.........
+ruby-2.2.1 - #gemset created /Users/bjedrocha/.rvm/gems/ruby-2.2.1@contacts-manager
+ruby-2.2.1 - #generating contacts-manager wrappers.........
 
 $ rvm gemset use contacts-manager
-Using ruby-2.1.1 with gemset contacts-manager
+Using ruby-2.2.1 with gemset contacts-manager
 {% endhighlight %}
 
-In order to create a new Rails application, we'll need the Rails gem itself. We can install it via the `gem install` command. Without specifying a version, the latest version of Rails will be installed (4.1.0 as of this writing).
+In order to create a new Rails application, we'll need the Rails gem itself. We can install it via the `gem install` command. Without specifying a version, the latest version of Rails will be installed (4.2.5 as of this writing).
 
 {% highlight bash %}
 $ gem install rails --no-ri --no-rdoc
@@ -1045,12 +1041,12 @@ Rails give you a functional application from the start. You can start it up by g
 {% highlight bash %}
 $ rails server
 => Booting WEBrick
-=> Rails 4.1.0 application starting in development on http://0.0.0.0:3000
+=> Rails 4.2.5 application starting in development on http://0.0.0.0:3000
 => Run `rails server -h` for more startup options
 => Notice: server is listening on all interfaces (0.0.0.0). Consider using 127.0.0.1 (--binding option)
 => Ctrl-C to shutdown server
 [2014-04-27 18:18:21] INFO  WEBrick 1.3.1
-[2014-04-27 18:18:21] INFO  ruby 2.1.1 (2014-02-24) [x86_64-darwin12.0]
+[2014-04-27 18:18:21] INFO  ruby 2.2.1 (2014-02-24) [x86_64-darwin12.0]
 [2014-04-27 18:18:21] INFO  WEBrick::HTTPServer#start: pid=31204 port=3000
 {% endhighlight %}
 
@@ -1066,7 +1062,7 @@ Recall that at the beginning of this section we created a new gemset that would 
 
 {% highlight bash %}
 $ rvm gemset list
-gemsets for ruby-2.1.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.1.1)
+gemsets for ruby-2.2.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.2.1)
 => (default)
    contacts-manager
    global
@@ -1078,7 +1074,7 @@ While we could just switch back to the `contacts-manager` gemset, doing this eve
 
 {% highlight bash %}
 $ touch .ruby-version
-$ echo "2.1.1" >> .ruby-version
+$ echo "2.2.1" >> .ruby-version
 $ touch .ruby-gemset
 $ echo "contacts-manager" >> .ruby-gemset
 {% endhighlight %}
@@ -1087,7 +1083,7 @@ The above will create two files within your directory, `.ruby-version` and `.rub
 
 {% highlight bash %}
 $ rvm gemset list
-gemsets for ruby-2.1.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.1.1)
+gemsets for ruby-2.2.1 (found in /Users/bjedrocha/.rvm/gems/ruby-2.2.1)
    (default)
 => contacts-manager
    global
@@ -1101,6 +1097,9 @@ It's also a good idea to have this under version control. Go ahead and initializ
 
 #### Disable Coffeescript
 
-Coffeescript is now the default in Rails, let's disable this. Load the contacts-manager application within your text editor and open the `Gemfile` file. Rails uses [Bundler](http://bundler.io/) to manage your application's gem dependencies and the `Gemfile` is where these dependencies are listed. Take a look through the file, there are very helpful comments that describe what each of the gems does. Find the line with `gem 'coffee-rails', '~> 4.0.0'` and comment it out (or remove it completely).
+Coffeescript is now the default in Rails, we'll disable this so we can use plain old JavaScript. Load the contacts-manager application within your text editor and open the `Gemfile` file. Rails uses [Bundler](http://bundler.io/) to manage your application's gem dependencies and the `Gemfile` is where these dependencies are listed. Take a look through the file, there are very helpful comments that describe what each of the gems does. Find the line with `gem 'coffee-rails'` and comment it out (or remove it completely).
 
 With this little bit of housekeeping in place, we can go ahead and start coding.
+
+> #### Project - Contacts Manager
+You'll now take a break from this guide and spend the next couple of days working on (perhaps) your first Rails project. Full project description and requirements, along with links to some helpful resources, can be found [here](https://github.com/fmitech/employee-manual/blob/master/contacts-manager-requirements.md). Please review and ask for clarification if needed.
