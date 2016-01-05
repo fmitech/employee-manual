@@ -502,7 +502,7 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 As we can see, a normal revert will return the working copy to the state it was prior to staging and committing.
 
-Add and commit the file again before continueing.
+Add and commit the file again before continuing.
 
 #### Soft revert
 
@@ -902,7 +902,7 @@ You should already have the repository cloned on your machine if you've been fol
 
 #### Checkout `gh-pages` and make sure you're up-to-date
 
-As mentioned previously, the manual you're reading is contained in the `gh-pages` branch of the employee-manual repository. Checkout this branch and pull the latest changes from the server to ensure you're working with the most up-to-date version.
+As mentioned before, the manual you're reading is contained in the `gh-pages` branch of the employee-manual repository. Checkout this branch and pull the latest changes from the server to ensure you're working with the most up-to-date version.
 
 {% highlight bash %}
 $ git checkout gh-pages
